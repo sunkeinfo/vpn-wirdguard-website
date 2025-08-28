@@ -30,7 +30,6 @@
         .button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 40px; color: #0056b3; }
         
-        /* 新增：核心優勢區塊 */
         .advantages-section { padding: 60px 0; }
         .advantages-grid { display: flex; justify-content: space-around; gap: 30px; flex-wrap: wrap; }
         .advantage-item { flex-basis: 30%; min-width: 280px; text-align: center; }
@@ -85,10 +84,9 @@
         <section class="hero">
             <h1>告別網絡限制，擁抱數碼自由</h1>
             <p>採用頂尖 WireGuard® 協議，為您提供前所未有的極速、安全與穩定連接。<br>專為香港、台灣用戶優化，立即體驗無縫的網絡世界。</p>
-            <a href="#core-advantages" class="button">立即訂閱</a>
+            <a href="#trial" class="button">立即訂閱</a>
         </section>
         
-        <!-- 新增的核心優勢區塊 -->
         <section id="core-advantages" class="advantages-section">
             <div class="container">
                 <div class="advantages-grid">
@@ -111,7 +109,7 @@
             </div>
         </section>
 
-        <section class="trial-section">
+        <section id="trial" class="trial-section">
             <div class="container">
                 <h2>立即開始您的一週免費試用</h2>
                 <p>體驗我們遍佈全球的頂級伺服器節點，無任何承諾，隨時可享 30 天退款保證。</p>
@@ -145,7 +143,7 @@
                             <li>孟買</li>
                             <li>海德拉巴</li>
                             <li>雪梨</li>
-                            <li>墨爾本</li>
+                            <li>墨本</li>
                         </ul>
                     </div>
                     <div class="region-card">
@@ -171,12 +169,12 @@
                         </ul>
                     </div>
                 </div>
-                <a href="#pricing" class="button" style="margin-top: 30px;">立即免費試用</a>
+                <a href="#why-us" class="button" style="margin-top: 30px;">立即免費試用</a>
             </div>
         </section>
 
         <div class="container">
-            <h2>為何選擇 MyWireGuard？</h2>
+            <h2 id="why-us">為何選擇 MyWireGuard？</h2>
             <div class="features-grid">
                 <!-- 特色卡片內容保持不變 -->
                 <div class="feature-card"><div class="icon">🚀</div><h3>速度超快，一鍵連接</h3><p>採用先進的WireGuard協議，暢享賽事直播、下載大檔案、打線上遊戲。操作簡便，一鍵即可連接。</p></div>
@@ -222,12 +220,12 @@
     <script>
       (function(d,t) {
         var BASE_URL="https://app.chatwoot.com";
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=BASE_URL+"/packs/js/sdk.js";
-        g.async = true;
-        s.parentNode.insertBefore(g,s);
-        g.onload=function(){
-          window.chatwootSDK.run({
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[_0x4523('0x0')];
+        g['src']=BASE_URL+"/packs/js/sdk.js";
+        g['async']=!![];
+        s['parentNode']['insertBefore'](g,s);
+        g['onload']=function(){
+          window['chatwootSDK']['run']({
             websiteToken: 'UHLFhmfNBGbWWaV4vt431TuN',
             baseUrl: BASE_URL
           })
