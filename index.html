@@ -29,13 +29,20 @@
         .button { display: inline-block; background: #e44d26; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
         .button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
         h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 40px; color: #0056b3; }
+        
+        /* 新增：核心優勢區塊 */
+        .advantages-section { padding: 60px 0; }
+        .advantages-grid { display: flex; justify-content: space-around; gap: 30px; flex-wrap: wrap; }
+        .advantage-item { flex-basis: 30%; min-width: 280px; text-align: center; }
+        .advantage-item .icon { font-size: 4em; color: #007bff; }
+        .advantage-item h3 { font-size: 1.5em; margin-top: 15px; }
+        
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .feature-card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .feature-card .icon { font-size: 3em; margin-bottom: 15px; }
         .feature-card h3 { font-size: 1.5em; color: #333; margin-bottom: 10px; }
         
-        /* 試用區域新樣式 */
-        .trial-section { background-color: #f8f9fa; padding: 60px 20px; margin-top: 60px; text-align: center; }
+        .trial-section { background-color: #f8f9fa; padding: 60px 20px; text-align: center; }
         .regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; max-width: 1100px; margin-left: auto; margin-right: auto; text-align: left;}
         .region-card { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
         .region-card h3 { font-size: 1.3em; margin-top: 0; padding-bottom: 10px; border-bottom: 1px solid #eee; }
@@ -53,7 +60,7 @@
         footer p { margin: 10px 0; }
         footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
         footer a:hover { text-decoration: underline; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } .advantages-grid { flex-direction: column; align-items: center; } }
     </style>
 </head>
 <body>
@@ -78,9 +85,32 @@
         <section class="hero">
             <h1>告別網絡限制，擁抱數碼自由</h1>
             <p>採用頂尖 WireGuard® 協議，為您提供前所未有的極速、安全與穩定連接。<br>專為香港、台灣用戶優化，立即體驗無縫的網絡世界。</p>
-            <a href="#pricing" class="button">立即訂閱</a>
+            <a href="#core-advantages" class="button">立即訂閱</a>
         </section>
         
+        <!-- 新增的核心優勢區塊 -->
+        <section id="core-advantages" class="advantages-section">
+            <div class="container">
+                <div class="advantages-grid">
+                    <div class="advantage-item">
+                        <div class="icon">🚀</div>
+                        <h3>極致速度</h3>
+                        <p>輕量級的 WireGuard 協議確保了最低的性能損耗和延遲，為您帶來閃電般的瀏覽、串流和下載體驗。</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="icon">🛡️</div>
+                        <h3>軍規安全</h3>
+                        <p>採用最先進的加密技術和嚴格的無日誌政策，您的數碼足跡將被完美隱藏，確保絕對的私隱與安全。</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="icon">🌍</div>
+                        <h3>全球覆蓋</h3>
+                        <p>我們在全球部署了大量高速伺服器節點，無論您身在何處，都能輕鬆連接，解鎖全球內容。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="trial-section">
             <div class="container">
                 <h2>立即開始您的一週免費試用</h2>
