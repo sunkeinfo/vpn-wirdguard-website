@@ -3,236 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>告別網絡限制，暢遊數碼世界！專為香港、台灣用戶優化的WireGuard VPN服務</title>
+    <title>MyWireGuard - 安全、極速、穩定的 WireGuard VPN 服務</title>
     <style>
-        body { 
-            font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; 
-            line-height: 1.8; 
-            color: #333; 
-            margin: 0 auto; 
-            max-width: 900px; 
-            padding: 20px; 
-            background-color: #fdfdfd;
-        }
-        h1, h2, h3 { 
-            color: #0056b3; 
-            text-align: center;
-        }
-        h1 { 
-            font-size: 2em;
-            margin-bottom: 30px; 
-        }
-        h2 { 
-            border-bottom: 2px solid #eee; 
-            padding-bottom: 15px; 
-            margin-top: 50px; 
-            font-size: 1.8em;
-        }
-        p {
-            font-size: 1.1em;
-            color: #555;
-        }
-        .intro-text {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-        }
-
-        /* 特色卡片佈局 */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        .feature-card {
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-        .feature-card .icon {
-            font-size: 3em;
-            color: #007bff;
-            margin-bottom: 15px;
-        }
-        .feature-card h3 {
-            font-size: 1.4em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .feature-card p {
-            font-size: 1em;
-            color: #666;
-        }
-
-        /* 定價與付款 */
-        .price-box { 
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            border: none;
-            padding: 30px; 
-            border-radius: 12px; 
-            text-align: center; 
-            margin: 40px auto; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            max-width: 600px;
-        }
-        .price-box h3 {
-            font-size: 1.5em;
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        .price-option {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-        }
-        .price-option:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        .price-option .plan-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #333;
-        }
-        .price-option .plan-name .best-value {
-            background-color: #e44d26;
-            color: white;
-            font-size: 0.7em;
-            padding: 3px 8px;
-            border-radius: 10px;
-            margin-left: 8px;
-            vertical-align: middle;
-        }
-        .price-option .price-main { 
-            color: #0056b3; 
-            font-size: 1.8em; 
-            font-weight: bold;
-            margin: 5px 0;
-        }
-        .price-option .price-secondary {
-            font-size: 1em;
-            color: #555;
-        }
-        
-        /* 承諾與保證 */
-        .commitment-section {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px;
-            background-color: #f9f9f9;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
-        .commitment-item {
-            flex: 1;
-            min-width: 280px;
-            text-align: center;
-        }
-        .commitment-item h3 {
-            font-size: 1.4em;
-        }
-
-        /* 聯絡按鈕 */
-        .contact-btn { 
-            display: block; 
-            width: 300px; 
-            margin: 50px auto; 
-            padding: 15px 20px; 
-            background: linear-gradient(45deg, #007bff, #0056b3); 
-            color: white; 
-            text-align: center; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-size: 1.2em; 
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-            transition: all 0.3s ease; 
-        }
-        .contact-btn:hover { 
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
-        }
+        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #fdfdfd; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { max-height: 40px; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        nav li { margin-left: 30px; }
+        nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; }
+        nav a:hover { color: #007bff; }
+        .hero { background: linear-gradient(135deg, #007bff, #0056b3); color: white; text-align: center; padding: 100px 20px; }
+        .hero h1 { font-size: 3em; margin-bottom: 20px; }
+        .hero p { font-size: 1.2em; margin-bottom: 30px; }
+        .button { display: inline-block; background: #e44d26; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
+        .button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 40px; color: #0056b3; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .feature-card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .feature-card .icon { font-size: 3em; margin-bottom: 15px; }
+        .feature-card h3 { font-size: 1.5em; color: #333; margin-bottom: 10px; }
+        .price-box { background: #fff; border: 1px solid #ddd; padding: 40px; border-radius: 12px; text-align: center; margin: 60px auto; max-width: 600px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .price-box h3 { font-size: 1.8em; margin-top: 0; }
+        .price-option { margin: 20px 0; padding: 20px 0; border-top: 1px solid #eee; }
+        .plan-name { font-size: 1.3em; font-weight: bold; }
+        .best-value { background-color: #e44d26; color: white; font-size: 0.7em; padding: 4px 10px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+        .price-main { color: #0056b3; font-size: 2em; font-weight: bold; margin: 10px 0; }
+        .price-secondary { color: #555; }
+        footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
+        footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <h1>告別網絡限制，暢遊數碼世界！<br>專為香港、台灣用戶優化的WireGuard VPN服務</h1>
-    <p class="intro-text">身處香港、台灣的您，是否正為網絡延遲、瀏覽受限而煩惱？<br>我們隆重推出專為您量身打造的WireGuard VPN服務，助您輕鬆突破網絡藩籬，盡享極速、安全的數碼體驗！</p>
-    
-    <h2>為何選擇我們？</h2>
-    <div class="features-grid">
-        <div class="feature-card">
-            <div class="icon">🚀</div>
-            <h3>速度超快，一鍵連接</h3>
-            <p>採用先進的WireGuard協議，用市面上最快的VPN暢享賽事直播、下載大檔案、打線上遊戲。操作簡便，一鍵即可連接。</p>
+    <header>
+        <div class="container">
+            <a href="./index.html" class="logo">
+                <img src="./logo.png" alt="MyWireGuard Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="./downloads.html">客戶端下載</a></li>
+                    <li><a href="./tutorials.html">使用教程</a></li>
+                    <li><a href="./support.html">客戶查詢</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="feature-card">
-            <div class="icon">🛡️</div>
-            <h3>強大的加密技術</h3>
-            <p>運用業界領先的 AES 256 位元加密技術來隱藏您的位置並混淆您的網絡流量。讓您的網絡活動免受任何人監視。</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">📜</div>
-            <h3>嚴格的無日誌政策</h3>
-            <p>我們絕不記錄、分享或出售您的數據。我們的總部設在羅馬尼亞，該國的私隱法為您提供強而有力的保護。</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🌍</div>
-            <h3>龐大的伺服器網絡</h3>
-            <p>覆蓋美洲、歐洲、非洲和亞洲的全球伺服器網絡，助您安全地觀看串流影片、網購、使用網上銀行和瀏覽網頁。</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">🇭🇰🇹🇼</div>
-            <h3>專屬優化，直連港台</h3>
-            <p>我們深知香港、台灣用戶的特殊網絡環境，因此在節點選擇和網絡優化上投入大量精力，確保您獲得最佳的本地化體驗。</p>
-        </div>
-        <div class="feature-card">
-            <div class="icon">💳</div>
-            <h3>靈活便捷的付款方式</h3>
-            <p>我們提供多種支付方式，包括USDT、轉數快(FPS)、信用卡、支付寶及微信支付，確保您能輕鬆購買和續費服務。</p>
-        </div>
-    </div>
-    
-    <h2>超值定價方案</h2>
-    <div class="price-box">
-        <h3>選擇最適合您的方案</h3>
-        <div class="price-option">
-            <div class="plan-name">月付方案</div>
-            <div class="price-main">$2.99 美元 / 月</div>
-            <div class="price-secondary">約 23 港幣 (HKD) / 約 95 新台幣 (TWD)</div>
-        </div>
-        <div class="price-option">
-            <div class="plan-name">年付方案<span class="best-value">超值</span></div>
-            <div class="price-main">$29.99 美元 / 年</div>
-            <div class="price-secondary">約 235 港幣 (HKD) / 約 960 新台幣 (TWD)</div>
-        </div>
-    </div>
+    </header>
 
-    <h2>我們的承諾</h2>
-    <div class="commitment-section">
-        <div class="commitment-item">
-            <h3>30 天退款保證</h3>
-            <p>如果您不是 100% 滿意，可在 30 天内申請無憂退款。</p>
-        </div>
-        <div class="commitment-item">
-            <h3>24/7 全天候客戶支援</h3>
-            <p>隨時透過即時聊天或電子郵件聯繫我們。我們響應迅速，並支援多種語言。</p>
-        </div>
-    </div>
+    <main>
+        <section class="hero">
+            <h1>告別網絡限制，擁抱數碼自由</h1>
+            <p>採用頂尖 WireGuard® 協議，為您提供前所未有的極速、安全與穩定連接。<br>專為香港、台灣用戶優化，立即體驗無縫的網絡世界。</p>
+            <a href="#pricing" class="button">選擇您的方案</a>
+        </section>
 
-    <a href="#" class="contact-btn">立即體驗，開啟您的自由網絡之旅！</a>
-    
+        <div class="container">
+            <h2>為何選擇 MyWireGuard？</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>速度超快，一鍵連接</h3>
+                    <p>採用先進的WireGuard協議，暢享賽事直播、下載大檔案、打線上遊戲。操作簡便，一鍵即可連接。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🛡️</div>
+                    <h3>強大的加密技術</h3>
+                    <p>運用業界領先的 AES 256 位元加密技術來隱藏您的位置並混淆您的網絡流量。讓您的網絡活動免受任何人監視。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📜</div>
+                    <h3>嚴格的無日誌政策</h3>
+                    <p>我們絕不記錄、分享或出售您的數據。我們的總部設在羅馬尼亞，該國的私隱法為您提供強而有力的保護。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🌍</div>
+                    <h3>龐大的伺服器網絡</h3>
+                    <p>覆蓋美洲、歐洲、非洲和亞洲的全球伺服器網絡，助您安全地觀看串流影片、網購、使用網上銀行和瀏覽網頁。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🇭🇰🇹🇼</div>
+                    <h3>專屬優化，直連港台</h3>
+                    <p>我們深知香港、台灣用戶的特殊網絡環境，因此在節點選擇和網絡優化上投入大量精力，確保您獲得最佳的本地化體驗。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💬</div>
+                    <h3>24/7 全天候客戶支援</h3>
+                    <p>隨時透過即時聊天或電子郵件聯繫我們。我們響應迅速，並支援多種語言，隨時為您解決問題。</p>
+                </div>
+            </div>
+
+            <section id="pricing">
+                <h2>超值定價方案</h2>
+                <div class="price-box">
+                    <h3>選擇最適合您的方案</h3>
+                    <div class="price-option">
+                        <div class="plan-name">月付方案</div>
+                        <div class="price-main">$2.99 美元 / 月</div>
+                        <div class="price-secondary">約 23 港幣 (HKD) / 約 95 新台幣 (TWD)</div>
+                    </div>
+                    <div class="price-option">
+                        <div class="plan-name">年付方案<span class="best-value">超值</span></div>
+                        <div class="price-main">$29.99 美元 / 年</div>
+                        <div class="price-secondary">約 235 港幣 (HKD) / 約 960 新台幣 (TWD)</div>
+                    </div>
+                     <a href="#" class="button">立即訂閱</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
+            <p>
+                <a href="./contact.html">聯絡方式</a> |
+                <a href="./refund.html">退款政策</a>
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
