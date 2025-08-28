@@ -21,4 +21,73 @@
         .download-card h3 { font-size: 1.8em; margin-bottom: 10px; }
         .button { display: inline-block; background: #007bff; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease; }
         .button:hover { background-color: #0056b3; }
-        footer { background-color: #333; color: white; padding: 30px 0; 
+        footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
+        footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="./index.html" class="logo">
+                <img src="./logo.png" alt="MyWireGuard Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="./downloads.html">客戶端下載</a></li>
+                    <li><a href="./tutorials.html">使用教程</a></li>
+                    <li><a href="./support.html">客戶查詢</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>為您的所有設備下載 WireGuard® 客戶端</h2>
+        <div class="download-grid">
+            <div class="download-card">
+                <div class="icon">💻</div>
+                <h3>Windows</h3>
+                <p>支援 Windows 10 & 11 (x64)。</p>
+                <a href="https://download.wireguard.com/windows-client/wireguard-installer.exe" target="_blank" class="button">下載 .msi 安裝檔</a>
+            </div>
+            <div class="download-card">
+                <div class="icon">🍎</div>
+                <h3>macOS</h3>
+                <p>可從 Mac App Store 下載。</p>
+                <a href="https://apps.apple.com/us/app/wireguard/id1451685025" target="_blank" class="button">前往 App Store</a>
+            </div>
+             <div class="download-card">
+                <div class="icon">🐧</div>
+                <h3>Linux</h3>
+                <p>支援各大發行版，請參考教程。</p>
+                <a href="./tutorials.html" class="button">查看安裝指令</a>
+            </div>
+            <div class="download-card">
+                <div class="icon">📱</div>
+                <h3>iOS</h3>
+                <p>適用於 iPhone 和 iPad。</p>
+                <a href="https://apps.apple.com/us/app/wireguard/id1441195209" target="_blank" class="button">前往 App Store</a>
+            </div>
+            <div class="download-card">
+                <div class="icon">🤖</div>
+                <h3>Android</h3>
+                <p>可從 Google Play 下載。</p>
+                <a href="https://play.google.com/store/apps/details?id=com.wireguard.android" target="_blank" class="button">前往 Google Play</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
+            <p>
+                <a href="./contact.html">聯絡方式</a> |
+                <a href="./refund.html">退款政策</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
