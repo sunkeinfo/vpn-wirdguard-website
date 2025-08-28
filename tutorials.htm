@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用教程 - MyWireGuard</title>
+     <style>
+        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #fdfdfd; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+        header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { max-height: 40px; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+        nav li { margin-left: 30px; }
+        nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; }
+        nav a:hover { color: #007bff; }
+        h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 40px; color: #0056b3; }
+        .tutorial-section { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 30px; }
+        .tutorial-section h3 { margin-top: 0; color: #0056b3; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        code { background: #e9ecef; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monaco, monospace; }
+        pre { background: #212529; color: #fff; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+        footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
+        footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container" style="max-width: 1100px;">
+            <a href="./index.html" class="logo">
+                <img src="./logo.png" alt="MyWireGuard Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="./downloads.html">客戶端下載</a></li>
+                    <li><a href="./tutorials.html">使用教程</a></li>
+                    <li><a href="./support.html">客戶查詢</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>MyWireGuard 設定指南</h2>
+        
+        <section class="tutorial-section">
+            <h3>第一步：獲取您的 WireGuard 設定檔</h3>
+            <p>在您成功訂閱我們的服務後，您將會在您的客戶中心看到「下載設定檔」的按鈕。每個伺服器節點都會對應一個獨立的 <code>.conf</code> 設定檔。</p>
+            <p>請將這個檔案下載到您準備設定的設備上。</p>
+        </section>
+
+        <section class="tutorial-section">
+            <h3>第二步：匯入設定檔</h3>
+            <p>請先根據您的操作系統，從我們的「<a href="./downloads.html">客戶端下載</a>」頁面安裝官方的 WireGuard 客戶端。</p>
+            <ul>
+                <li><strong>Windows / macOS：</strong> 打開 WireGuard 程式，點擊左下角的「從檔案匯入隧道...」，然後選擇您剛剛下載的 <code>.conf</code> 檔案。</li>
+                <li><strong>iOS / Android：</strong> 打開 WireGuard App，點擊右下角的「+」號，選擇「從檔案或存檔匯入」，然後找到您的 <code>.conf</code> 檔案。</li>
+            </ul>
+        </section>
+
+        <section class="tutorial-section">
+            <h3>第三步：連接與斷開</h3>
+            <p>設定檔匯入成功後，您會在客戶端的主介面看到一個新的連線項目。</p>
+            <p>點擊該項目旁邊的開關按鈕即可啟用連接。開關變為綠色，即表示您已成功連接到 MyWireGuard 伺服器。</p>
+            <p>再次點擊開關即可斷開連接。</p>
+        </section>
+
+         <section class="tutorial-section">
+            <h3>(進階) Linux 安裝與設定</h3>
+            <p>對於 Debian/Ubuntu 系統，您可以使用以下指令安裝：</p>
+            <pre><code>sudo apt update
+sudo apt install wireguard -y</code></pre>
+            <p>安裝完成後，將您的 <code>.conf</code> 設定檔複製到 <code>/etc/wireguard/</code> 目錄下 (例如，命名為 <code>mywg0.conf</code>)。</p>
+            <p>使用以下指令來啟動連接：</p>
+            <pre><code>sudo wg-quick up mywg0</code></pre>
+            <p>若要斷開連接，請使用：</p>
+            <pre><code>sudo wg-quick down mywg0</code></pre>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container" style="max-width: 1100px;">
+            <p>Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
+            <p>
+                <a href="./contact.html">聯絡方式</a> |
+                <a href="./refund.html">退款政策</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
