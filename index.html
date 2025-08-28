@@ -13,6 +13,7 @@
       gtag('config', 'G-61Y0GT23PH');
     </script>
     <style>
+        html { scroll-behavior: smooth; }
         body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #fdfdfd; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
@@ -32,9 +33,15 @@
         .feature-card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
         .feature-card .icon { font-size: 3em; margin-bottom: 15px; }
         .feature-card h3 { font-size: 1.5em; color: #333; margin-bottom: 10px; }
+        
+        /* 試用區域新樣式 */
         .trial-section { background-color: #f8f9fa; padding: 60px 20px; margin-top: 60px; text-align: center; }
-        .server-list { list-style: none; padding: 0; margin: 30px 0; column-count: 4; column-gap: 20px; text-align: left; max-width: 800px; margin-left: auto; margin-right: auto;}
-        .server-list li { margin-bottom: 10px; }
+        .regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; max-width: 1100px; margin-left: auto; margin-right: auto; text-align: left;}
+        .region-card { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .region-card h3 { font-size: 1.3em; margin-top: 0; padding-bottom: 10px; border-bottom: 1px solid #eee; }
+        .region-card ul { list-style: none; padding: 0; margin: 10px 0 0 0; }
+        .region-card li { margin-bottom: 8px; font-size: 0.95em; }
+
         .price-box { background: #fff; border: 1px solid #ddd; padding: 40px; border-radius: 12px; text-align: center; margin: 60px auto; max-width: 600px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .price-box h3 { font-size: 1.8em; margin-top: 0; }
         .price-option { margin: 20px 0; padding: 20px 0; border-top: 1px solid #eee; }
@@ -46,7 +53,7 @@
         footer p { margin: 10px 0; }
         footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
         footer a:hover { text-decoration: underline; }
-        @media (max-width: 768px) { .server-list { column-count: 2; } .hero h1 { font-size: 2.5em; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } }
     </style>
 </head>
 <body>
@@ -71,7 +78,7 @@
         <section class="hero">
             <h1>告別網絡限制，擁抱數碼自由</h1>
             <p>採用頂尖 WireGuard® 協議，為您提供前所未有的極速、安全與穩定連接。<br>專為香港、台灣用戶優化，立即體驗無縫的網絡世界。</p>
-            <a href="https://snaagkster.gumroad.com/l/order" target="_blank" rel="noopener noreferrer" class="button">立即訂閱</a>
+            <a href="#pricing" class="button">立即訂閱</a>
         </section>
         
         <section class="trial-section">
@@ -79,14 +86,62 @@
                 <h2>立即開始您的一週免費試用</h2>
                 <p>體驗我們遍佈全球的頂級伺服器節點，無任何承諾，隨時可享 30 天退款保證。</p>
                 <h4>您可以選擇以下任一地點開始試用：</h4>
-                <ul class="server-list">
-                    <li>開普敦</li> <li>香港</li> <li>台北</li> <li>海德拉巴</li> <li>雅加達</li> <li>墨爾本</li> <li>馬來西亞</li> <li>泰國</li>
-                    <li>卡加利</li> <li>蘇黎世</li> <li>米蘭</li> <li>西班牙</li> <li>特拉維夫</li> <li>阿聯酋</li> <li>巴林</li> <li>中部</li>
-                    <li>東京</li> <li>首爾</li> <li>大阪</li> <li>孟買</li> <li>新加坡</li> <li>雪梨</li> <li>中部</li> <li>法蘭克福</li>
-                    <li>斯德哥爾摩</li> <li>愛爾蘭</li> <li>倫敦</li> <li>巴黎</li> <li>聖保羅</li> <li>北維吉尼亞</li> <li>俄亥俄州</li> <li>北加州</li>
-                    <li>奧勒岡州</li>
-                </ul>
-                <a href="https://snaagkster.gumroad.com/l/order" target="_blank" rel="noopener noreferrer" class="button">立即免費試用</a>
+                <div class="regions-grid">
+                    <div class="region-card">
+                        <h3>🌎 美洲</h3>
+                        <ul>
+                            <li>美國 (北維吉尼亞)</li>
+                            <li>美國 (俄亥俄州)</li>
+                            <li>美國 (北加州)</li>
+                            <li>美國 (奧勒岡州)</li>
+                            <li>加拿大 (卡加利)</li>
+                            <li>加拿大 (中部)</li>
+                            <li>墨西哥 (中部)</li>
+                            <li>南美洲 (聖保羅)</li>
+                        </ul>
+                    </div>
+                    <div class="region-card">
+                        <h3>🌏 亞太地區</h3>
+                        <ul>
+                            <li>香港</li>
+                            <li>台北</li>
+                            <li>東京</li>
+                            <li>首爾</li>
+                            <li>大阪</li>
+                            <li>新加坡</li>
+                            <li>馬來西亞</li>
+                            <li>泰國</li>
+                            <li>雅加達</li>
+                            <li>孟買</li>
+                            <li>海德拉巴</li>
+                            <li>雪梨</li>
+                            <li>墨爾本</li>
+                        </ul>
+                    </div>
+                    <div class="region-card">
+                        <h3>🌍 歐洲</h3>
+                        <ul>
+                            <li>英國 (倫敦)</li>
+                            <li>愛爾蘭</li>
+                            <li>法國 (巴黎)</li>
+                            <li>德國 (法蘭克福)</li>
+                            <li>瑞典 (斯德哥爾摩)</li>
+                            <li>意大利 (米蘭)</li>
+                            <li>西班牙</li>
+                            <li>瑞士 (蘇黎世)</li>
+                        </ul>
+                    </div>
+                    <div class="region-card">
+                        <h3>🌍 中東與非洲</h3>
+                        <ul>
+                            <li>以色列 (特拉維夫)</li>
+                            <li>阿聯酋</li>
+                            <li>巴林</li>
+                            <li>非洲 (開普敦)</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="#pricing" class="button" style="margin-top: 30px;">立即免費試用</a>
             </div>
         </section>
 
