@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>客戶查詢 - MyWireGuard</title>
+    <title>客戶查詢與常見問題 - MyWireGuard</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-61Y0GT23PH"></script>
     <script>
@@ -13,7 +13,7 @@
       gtag('config', 'G-61Y0GT23PH');
     </script>
      <style>
-        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #fdfdfd; }
+        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #f8f9fa; }
         .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
         header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
@@ -22,12 +22,22 @@
         nav li { margin-left: 30px; }
         nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; }
         nav a:hover { color: #007bff; }
-        h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 40px; color: #0056b3; }
-        .support-section { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        .support-section h3 { margin-top: 0; }
-        .faq-item { border-bottom: 1px solid #eee; padding: 15px 0; }
-        .faq-item:last-child { border-bottom: none; }
-        .faq-question { font-weight: bold; font-size: 1.1em; }
+        h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 20px; color: #0056b3; }
+        .intro-text { text-align: center; font-size: 1.1em; color: #555; max-width: 700px; margin: 0 auto 50px auto; }
+        
+        .faq-section { margin-bottom: 40px; }
+        .faq-section h3 { font-size: 1.8em; color: #0056b3; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-bottom: 20px; }
+        .faq-item { background: #fff; border: 1px solid #e9ecef; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
+        .faq-question { font-weight: bold; font-size: 1.2em; padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .faq-question::after { content: '＋'; font-size: 1.5em; color: #007bff; transition: transform 0.3s ease; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.5s ease; padding: 0 20px; }
+        .faq-answer p, .faq-answer ul, .faq-answer ol { margin-top: 0; }
+        .faq-item.active .faq-answer { max-height: 500px; /* A large enough value */ padding: 0 20px 20px 20px; }
+        .faq-item.active .faq-question::after { transform: rotate(45deg); }
+
+        .support-cta { background: #fff; padding: 30px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .button { display: inline-block; background: #007bff; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease; }
+        .button:hover { background-color: #0056b3; }
         footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
         footer p { margin: 10px 0; }
         footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
@@ -53,35 +63,84 @@
     </header>
 
     <main class="container">
-        <h2>客戶查詢與支援</h2>
+        <h2>客戶查詢與常見問題 (FAQ)</h2>
+        <p class="intro-text">遇到問題了嗎？別擔心，我們在這裏為您解答。大多數常見問題都能在這裡找到解決方案。如果問題依然存在，我們的客服團隊隨時準備為您提供幫助。</p>
 
-        <section class="support-section">
-            <h3>常見問題 (FAQ)</h3>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <p class="faq-question">Q: 連接成功後無法上網怎麼辦？</p>
-                    <p>A: 請檢查您的設定檔中的 DNS 設定是否正確。我們的預設 DNS 是 1.1.1.1。您也可以嘗試重啟您的設備或 WireGuard 客戶端。</p>
+        <section class="faq-section">
+            <h3>連接與性能</h3>
+            <div class="faq-item">
+                <div class="faq-question">連接後沒有網絡，無法上網怎麼辦？</div>
+                <div class="faq-answer">
+                    <p>這通常是 DNS 解析問題，是最常見的情況。請嘗試以下步驟：</p>
+                    <ol>
+                        <li><strong>編輯設定檔：</strong> 打開 WireGuard 客戶端，選擇您的連線並點擊「編輯」。</li>
+                        <li><strong>修改 DNS：</strong> 找到 <code>[Interface]</code> 區塊下的 <code>DNS</code> 這一行。</li>
+                        <li><strong>更換為公共 DNS：</strong> 將其值修改為 <code>1.1.1.1, 8.8.8.8</code> 或 <code>8.8.4.4, 1.0.0.1</code>。</li>
+                        <li><strong>儲存並重連：</strong> 儲存您的修改，然後斷開並重新連接 VPN。</li>
+                    </ol>
                 </div>
-                <div class="faq-item">
-                    <p class="faq-question">Q: 速度感覺很慢，如何改善？</p>
-                    <p>A: 速度受多種因素影響。請嘗試切換到地理位置離您更近的伺服器節點。同時，請確保您本地的網絡連接穩定。</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">點擊「啟用」後無法成功連接 (無法完成握手)？</div>
+                <div class="faq-answer">
+                    <p>無法完成握手 (Handshake) 通常意味著您的設備無法與我們的伺服器建立初始連接。原因可能如下：</p>
+                    <ul>
+                        <li><strong>網絡防火牆：</strong> 您所在的網絡（例如公司、學校或公共 WiFi）可能有防火牆阻止了 WireGuard 使用的 UDP 端口。請嘗試切換到不同的網絡（例如手機熱點）進行測試。</li>
+                        <li><strong>設定檔問題：</strong> 請確保您使用的是從我們客戶中心下載的最新設定檔，沒有手動修改過金鑰 (PublicKey) 或端點 (Endpoint) 地址。</li>
+                    </ul>
                 </div>
-                <div class="faq-item">
-                    <p class="faq-question">Q: 一個帳號可以在多少台設備上使用？</p>
-                    <p>A: 我們的每個設定檔都可以在多台設備上安裝，但同一時間只建議在一台設備上啟用連接，以保證最佳的穩定性和性能。</p>
-                </div>
-                 <div class="faq-item">
-                    <p class="faq-question">Q: 如何查詢我的服務到期時間？</p>
-                    <p>A: 您可以在您的客戶中心查詢所有已訂閱服務的詳細資訊，包括啟用日期和到期時間。</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">連接 VPN 後速度變慢了，如何改善？</div>
+                <div class="faq-answer">
+                    <p>VPN 速度受多種因素影響，但您可以嘗試以下方法來優化：</p>
+                    <ul>
+                        <li><strong>選擇就近節點：</strong> 物理距離是影響速度的最大因素。請盡量選擇地理位置離您最近的伺服器節點。</li>
+                        <li><strong>考慮獨享專線：</strong> 如果您需要極致的性能和穩定性，不受其他用戶影響，強烈建議您升級到我們的「獨享專線」方案。</li>
+                        <li><strong>嘗試分流工具：</strong> 參考我們教程頁面推薦的 TunnlTo 工具，讓其他程式走本地網絡，互不影響。</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="support-section">
-            <h3>需要更多幫助？</h3>
-            <p>如果上述問題未能解決您的疑問，我們的客服團隊隨時準備為您提供幫助。請前往我們的「<a href="./contact.html">聯絡方式</a>」頁面，通過電子郵件或點擊右下角的圖標與我們即時聊天。</p>
+        <section class="faq-section">
+            <h3>帳戶與方案</h3>
+            <div class="faq-item">
+                <div class="faq-question">共享節點和獨享專線有什麼區別？</div>
+                <div class="faq-answer">
+                    <p>這是我們提供的兩種核心方案，以滿足不同用戶的需求：</p>
+                    <ul>
+                        <li><strong>共享節點 (Shared)：</strong> 您將與其他用戶共享伺服器的資源和 IP 地址。這是最具性價比的選擇，非常適合日常的匿名瀏覽、保障公共 WiFi 安全和訪問一般網站。</li>
+                        <li><strong>獨享專線 (Dedicated)：</strong> 您將獲得一個完全為您個人保留的 VPN 隧道和一個**固定的獨享 IP 地址**。這意味著：
+                            <ul>
+                                <li><strong>性能更穩定：</strong> 頻寬僅供您一人使用，不受他人活動影響。</li>
+                                <li><strong>IP 純淨度高：</strong> 杜絕了因共享 IP 被某些網站（如網上銀行）限制或封鎖的風險。</li>
+                                <li><strong>專業用途首選：</strong> 非常適合需要固定 IP 進行遠程辦公、訪問公司內部系統或進行安全線上交易的用戶。</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question">一個設定檔 (帳號) 可以在多少台設備上使用？</div>
+                <div class="faq-answer">
+                    <p>您可以在您的所有設備上（電腦、手機、平板）安裝同一個設定檔。</p>
+                    <p>但為了保證最佳的連接穩定性和性能，我們建議**同一個設定檔在同一時間只在一台設備上啟用連接**。</p>
+                </div>
+            </div>
+             <div class="faq-item">
+                <div class="faq-question">你們是否會記錄我的上網活動 (無日誌政策)？</div>
+                <div class="faq-answer">
+                    <p><strong>我們嚴格遵守無日誌政策。</strong> 我們絕不會記錄、監控或儲存您的任何網絡流量、瀏覽歷史、DNS 查詢或 IP 地址。您的線上活動完全屬於您自己，我們致力於保護您的絕對私隱。</p>
+                </div>
+            </div>
         </section>
 
+        <div class="support-cta">
+            <h3>仍然需要幫助？</h3>
+            <p>如果以上解答未能解決您的問題，請不要猶豫！<br>我們的客服團隊隨時準備為您提供一對一的支援。</p>
+            <a href="./contact.html" class="button">聯絡我們的支援團隊</a>
+        </div>
     </main>
 
     <footer>
@@ -94,6 +153,23 @@
             </p>
         </div>
     </footer>
+
+    <!-- 可交互 FAQ 的 JavaScript -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                // Close other active items
+                document.querySelectorAll('.faq-item').forEach(el => {
+                    if (el !== parent && el.classList.contains('active')) {
+                        el.classList.remove('active');
+                    }
+                });
+                // Toggle current item
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
 
     <!-- Chatwoot SDK -->
     <script>
