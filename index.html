@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyWireGuard - 安全、極速、穩定的 WireGuard VPN 服務</title>
+    <title>MyWireGuard - 共享節點與獨享專線 WireGuard VPN 服務</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-61Y0GT23PH"></script>
     <script>
@@ -48,17 +48,23 @@
         .region-card ul { list-style: none; padding: 0; margin: 10px 0 0 0; }
         .region-card li { margin-bottom: 8px; font-size: 0.95em; }
 
-        .price-box { background: #fff; border: 1px solid #ddd; padding: 40px; border-radius: 12px; text-align: center; margin: 60px auto; max-width: 600px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .price-box h3 { font-size: 1.8em; margin-top: 0; }
-        .price-option { margin: 20px 0; padding: 20px 0; border-top: 1px solid #eee; }
-        .plan-name { font-size: 1.3em; font-weight: bold; }
-        .best-value { background-color: #e44d26; color: white; font-size: 0.7em; padding: 4px 10px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
-        .price-main { color: #0056b3; font-size: 2em; font-weight: bold; margin: 10px 0; }
+        /* 新定價區塊樣式 */
+        .pricing-container { display: flex; justify-content: center; align-items: stretch; gap: 30px; flex-wrap: wrap; }
+        .price-card { background: #fff; border: 1px solid #ddd; padding: 30px; border-radius: 12px; text-align: center; width: 100%; max-width: 420px; display: flex; flex-direction: column; }
+        .price-card h3 { font-size: 1.8em; margin-top: 0; }
+        .price-card .description { color: #555; min-height: 60px; }
+        .price-card ul { list-style: '✓'; text-align: left; padding-left: 20px; margin: 20px 0; flex-grow: 1; }
+        .price-card li { margin-bottom: 10px; }
+        .price-main { color: #0056b3; font-size: 2.2em; font-weight: bold; margin: 10px 0; }
         .price-secondary { color: #555; }
+        .price-card.recommended { border: 2px solid #007bff; position: relative; transform: scale(1.05); }
+        .recommended-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background-color: #007bff; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; }
+
         footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
         footer p { margin: 10px 0; }
         footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
         footer a:hover { text-decoration: underline; }
+        @media (max-width: 960px) { .price-card.recommended { transform: scale(1); } }
         @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } .advantages-grid { flex-direction: column; align-items: center; } }
     </style>
 </head>
@@ -83,28 +89,16 @@
     <main>
         <section class="hero">
             <h1>告別網絡限制，擁抱數碼自由</h1>
-            <p>採用頂尖 WireGuard® 協議，為您提供前所未有的極速、安全與穩定連接。<br>專為香港、台灣用戶優化，立即體驗無縫的網絡世界。</p>
-            <a href="#trial" class="button">立即訂閱</a>
+            <p>採用頂尖 WireGuard® 協議，提供「共享節點」與「獨享專線」兩種方案，<br>滿足您從日常瀏覽到專業應用的所有需求。</p>
+            <a href="#trial" class="button">立即開始試用</a>
         </section>
         
         <section id="core-advantages" class="advantages-section">
             <div class="container">
                 <div class="advantages-grid">
-                    <div class="advantage-item">
-                        <div class="icon">🚀</div>
-                        <h3>極致速度</h3>
-                        <p>輕量級的 WireGuard 協議確保了最低的性能損耗和延遲，為您帶來閃電般的瀏覽、串流和下載體驗。</p>
-                    </div>
-                    <div class="advantage-item">
-                        <div class="icon">🛡️</div>
-                        <h3>軍規安全</h3>
-                        <p>採用最先進的加密技術和嚴格的無日誌政策，您的數碼足跡將被完美隱藏，確保絕對的私隱與安全。</p>
-                    </div>
-                    <div class="advantage-item">
-                        <div class="icon">🌍</div>
-                        <h3>全球覆蓋</h3>
-                        <p>我們在全球部署了大量高速伺服器節點，無論您身在何處，都能輕鬆連接，解鎖全球內容。</p>
-                    </div>
+                    <div class="advantage-item"><div class="icon">🚀</div><h3>極致速度</h3><p>輕量級的 WireGuard 協議確保了最低的性能損耗和延遲，為您帶來閃電般的瀏覽、串流和下載體驗。</p></div>
+                    <div class="advantage-item"><div class="icon">🛡️</div><h3>軍規安全</h3><p>採用最先進的加密技術和嚴格的無日誌政策，您的數碼足跡將被完美隱藏，確保絕對的私隱與安全。</p></div>
+                    <div class="advantage-item"><div class="icon">🌍</div><h3>全球覆蓋</h3><p>我們在全球部署了大量高速伺服器節點，無論您身在何處，都能輕鬆連接，解鎖全球內容。</p></div>
                 </div>
             </div>
         </section>
@@ -113,93 +107,59 @@
             <div class="container">
                 <h2>立即開始您的一週免費試用</h2>
                 <p>體驗我們遍佈全球的頂級伺服器節點，無任何承諾，隨時可享 30 天退款保證。</p>
-                <h4>您可以選擇以下任一地點開始試用：</h4>
+                <h4>您可以選擇以下任一共享節點地點開始試用：</h4>
                 <div class="regions-grid">
-                    <div class="region-card">
-                        <h3>🌎 美洲</h3>
-                        <ul>
-                            <li>美國 (北維吉尼亞)</li>
-                            <li>美國 (俄亥俄州)</li>
-                            <li>美國 (北加州)</li>
-                            <li>美國 (奧勒岡州)</li>
-                            <li>加拿大 (卡加利)</li>
-                            <li>加拿大 (中部)</li>
-                            <li>墨西哥 (中部)</li>
-                            <li>南美洲 (聖保羅)</li>
-                        </ul>
-                    </div>
-                    <div class="region-card">
-                        <h3>🌏 亞太地區</h3>
-                        <ul>
-                            <li>香港</li>
-                            <li>台北</li>
-                            <li>東京</li>
-                            <li>首爾</li>
-                            <li>大阪</li>
-                            <li>新加坡</li>
-                            <li>馬來西亞</li>
-                            <li>泰國</li>
-                            <li>雅加達</li>
-                            <li>孟買</li>
-                            <li>海德拉巴</li>
-                            <li>雪梨</li>
-                            <li>墨本</li>
-                        </ul>
-                    </div>
-                    <div class="region-card">
-                        <h3>🌍 歐洲</h3>
-                        <ul>
-                            <li>英國 (倫敦)</li>
-                            <li>愛爾蘭</li>
-                            <li>法國 (巴黎)</li>
-                            <li>德國 (法蘭克福)</li>
-                            <li>瑞典 (斯德哥爾摩)</li>
-                            <li>意大利 (米蘭)</li>
-                            <li>西班牙</li>
-                            <li>瑞士 (蘇黎世)</li>
-                        </ul>
-                    </div>
-                    <div class="region-card">
-                        <h3>🌍 中東與非洲</h3>
-                        <ul>
-                            <li>以色列 (特拉維夫)</li>
-                            <li>阿聯酋</li>
-                            <li>巴林</li>
-                            <li>非洲 (開普敦)</li>
-                        </ul>
-                    </div>
+                    <div class="region-card"><h3>🌎 美洲</h3><ul><li>美國 (北維吉尼亞)</li><li>美國 (俄亥俄州)</li><li>美國 (北加州)</li><li>美國 (奧勒岡州)</li><li>加拿大 (卡加利)</li><li>加拿大 (中部)</li><li>墨西哥 (中部)</li><li>南美洲 (聖保羅)</li></ul></div>
+                    <div class="region-card"><h3>🌏 亞太地區</h3><ul><li>香港</li><li>台北</li><li>東京</li><li>首爾</li><li>大阪</li><li>新加坡</li><li>馬來西亞</li><li>泰國</li><li>雅加達</li><li>孟買</li><li>海德拉巴</li><li>雪梨</li><li>墨爾本</li></ul></div>
+                    <div class="region-card"><h3>🌍 歐洲</h3><ul><li>英國 (倫敦)</li><li>愛爾蘭</li><li>法國 (巴黎)</li><li>德國 (法蘭克福)</li><li>瑞典 (斯德哥爾摩)</li><li>意大利 (米蘭)</li><li>西班牙</li><li>瑞士 (蘇黎世)</li></ul></div>
+                    <div class="region-card"><h3>🌍 中東與非洲</h3><ul><li>以色列 (特拉維夫)</li><li>阿聯酋</li><li>巴林</li><li>非洲 (開普敦)</li></ul></div>
                 </div>
-                <a href="#why-us" class="button" style="margin-top: 30px;">立即免費試用</a>
+                <a href="#why-us" class="button" style="margin-top: 30px;">查看方案詳情</a>
             </div>
         </section>
 
         <div class="container">
             <h2 id="why-us">為何選擇 MyWireGuard？</h2>
             <div class="features-grid">
-                <!-- 特色卡片內容保持不變 -->
                 <div class="feature-card"><div class="icon">🚀</div><h3>速度超快，一鍵連接</h3><p>採用先進的WireGuard協議，暢享賽事直播、下載大檔案、打線上遊戲。操作簡便，一鍵即可連接。</p></div>
                 <div class="feature-card"><div class="icon">🛡️</div><h3>強大的加密技術</h3><p>運用業界領先的 AES 256 位元加密技術來隱藏您的位置並混淆您的網絡流量。讓您的網絡活動免受任何人監視。</p></div>
-                <div class="feature-card"><div class="icon">📜</div><h3>嚴格的無日誌政策</h3><p>我們絕不記錄、分享或出售您的數據。我們的總部設在羅馬尼亞，該國的私隱法為您提供強而有力的保護。</p></div>
-                <div class="feature-card"><div class="icon">🌍</div><h3>龐大的伺服器網絡</h3><p>覆蓋美洲、歐洲、非洲和亞洲的全球伺服器網絡，助您安全地觀看串流影片、網購、使用網上銀行和瀏覽網頁。</p></div>
+                <div class="feature-card"><div class="icon">📜</div><h3>嚴格的無日誌政策</h3><p>我們絕不記錄、分享或出售您的數據。我們的總部設在羅馬ニ亞，該國的私隱法為您提供強而有力的保護。</p></div>
+                <div class="feature-card"><div class="icon">🔑</div><h3>獨享專線選項</h3><p>需要固定 IP 和極致性能？我們提供獨享專線方案，隧道和 IP 地址僅供您一人使用，是遠程辦公和專業應用的最佳選擇。</p></div>
                 <div class="feature-card"><div class="icon">🇭🇰🇹🇼</div><h3>專屬優化，直連港台</h3><p>我們深知香港、台灣用戶的特殊網絡環境，因此在節點選擇和網絡優化上投入大量精力，確保您獲得最佳的本地化體驗。</p></div>
                 <div class="feature-card"><div class="icon">💬</div><h3>24/7 全天候客戶支援</h3><p>隨時透過即時聊天或電子郵件聯繫我們。我們響應迅速，並支援多種語言，隨時為您解決問題。</p></div>
             </div>
 
             <section id="pricing">
-                <h2>超值定價方案</h2>
-                <div class="price-box">
-                    <h3>選擇最適合您的方案</h3>
-                    <div class="price-option">
-                        <div class="plan-name">月付方案</div>
-                        <div class="price-main">$2.99 美元 / 月</div>
-                        <div class="price-secondary">約 23 港幣 (HKD) / 約 95 新台幣 (TWD)</div>
+                <h2>選擇最適合您的方案</h2>
+                <div class="pricing-container">
+                    <div class="price-card">
+                        <h3>共享節點</h3>
+                        <p class="description">最具性價比的選擇，適合日常瀏覽、串流娛樂和保障個人私隱。</p>
+                        <ul>
+                            <li>連接我們所有的共享伺服器</li>
+                            <li>與其他用戶共享 IP 地址</li>
+                            <li>極致的匿名性</li>
+                            <li>所有核心安全功能</li>
+                        </ul>
+                        <div class="price-main">$2.99 <span style="font-size: 0.5em;">美元/月</span></div>
+                        <div class="price-secondary">或 $29.99 美元/年</div>
+                        <a href="https://snaagkster.gumroad.com/l/order" target="_blank" rel="noopener noreferrer" class="button">選擇共享方案</a>
                     </div>
-                    <div class="price-option">
-                        <div class="plan-name">年付方案<span class="best-value">超值</span></div>
-                        <div class="price-main">$29.99 美元 / 年</div>
-                        <div class="price-secondary">約 235 港幣 (HKD) / 約 960 新台幣 (TWD)</div>
+                    <div class="price-card recommended">
+                        <div class="recommended-badge">專業推薦</div>
+                        <h3>獨享專線</h3>
+                        <p class="description">為您個人專屬的 VPN 隧道，提供無與倫比的性能、穩定性和固定的 IP 地址。</p>
+                        <ul>
+                            <li><strong>您專屬的 VPN 隧道</strong></li>
+                            <li><strong>固定的獨享 IP 地址</strong></li>
+                            <li>杜絕因他人行為導致 IP 被封鎖</li>
+                            <li>遠程辦公、訪問權限系統的最佳選擇</li>
+                            <li>最高的穩定性和性能</li>
+                        </ul>
+                        <div class="price-main">$9.99 <span style="font-size: 0.5em;">美元/月</span></div>
+                        <div class="price-secondary">或 $99.99 美元/年</div>
+                        <a href="https://snaagkster.gumroad.com/l/order-dedicated" target="_blank" rel="noopener noreferrer" class="button">升級至獨享專線</a>
                     </div>
-                     <a href="https://snaagkster.gumroad.com/l/order" target="_blank" rel="noopener noreferrer" class="button">立即訂閱</a>
                 </div>
             </section>
         </div>
@@ -220,12 +180,12 @@
     <script>
       (function(d,t) {
         var BASE_URL="https://app.chatwoot.com";
-        var g=d.createElement(t),s=d.getElementsByTagName(t)[_0x4523('0x0')];
-        g['src']=BASE_URL+"/packs/js/sdk.js";
-        g['async']=!![];
-        s['parentNode']['insertBefore'](g,s);
-        g['onload']=function(){
-          window['chatwootSDK']['run']({
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=BASE_URL+"/packs/js/sdk.js";
+        g.async = true;
+        s.parentNode.insertBefore(g,s);
+        g.onload=function(){
+          window.chatwootSDK.run({
             websiteToken: 'UHLFhmfNBGbWWaV4vt431TuN',
             baseUrl: BASE_URL
           })
