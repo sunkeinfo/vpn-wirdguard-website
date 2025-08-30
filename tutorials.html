@@ -24,9 +24,21 @@
         nav a:hover { color: #007bff; }
         h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 40px; color: #0056b3; }
         .tutorial-section { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        .tutorial-section h3 { margin-top: 0; color: #0056b3; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .tutorial-section h3 { font-size: 1.8em; margin-top: 0; color: #0056b3; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .tutorial-section h4 { font-size: 1.3em; color: #333; margin-top: 25px; }
+        .highlight { background-color: #e9f7ff; border-left: 4px solid #007bff; padding: 15px; margin: 20px 0; border-radius: 4px; }
+        .button { display: inline-block; background: #007bff; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px;}
+        .button:hover { background-color: #0056b3; }
         code { background: #e9ecef; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monaco, monospace; color: #333; }
         pre { background: #212529; color: #fff; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+        
+        /* 新增：步驟卡片樣式 */
+        .steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .step-card { background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 25px; border-radius: 8px; text-align: center; }
+        .step-icon { font-size: 4em; margin-bottom: 15px; }
+        .step-card h4 { margin: 0 0 10px 0; font-size: 1.2em; color: #0056b3; }
+        .step-card p { font-size: 0.95em; margin: 0; }
+
         footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
         footer p { margin: 10px 0; }
         footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
@@ -55,29 +67,63 @@
         <h2>MyWireGuard 設定指南</h2>
         
         <section class="tutorial-section">
-            <h3>第一步：獲取您的 WireGuard 設定檔</h3>
-            <p>在您成功訂閱我們的服務或申請免費試用後，您將會在您的客戶中心看到「下載設定檔」的按鈕。每個伺服器節點都會對應一個獨立的 <code>.conf</code> 設定檔。</p>
-            <p>請將這個檔案下載到您準備設定的設備上。</p>
+            <h3>基礎設定 (使用官方客戶端)</h3>
+            <p>此方法適用於希望將所有網絡流量通過 VPN 的標準用戶。操作簡單直接。</p>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-icon">📄</div>
+                    <h4>第一步：獲取設定檔</h4>
+                    <p>從您的客戶中心下載所需節點的 <code>.conf</code> 設定檔。</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">📥</div>
+                    <h4>第二步：匯入設定檔</h4>
+                    <p>打開官方客戶端，選擇「從檔案匯入隧道...」並選取您的設定檔。</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🟢</div>
+                    <h4>第三步：連接</h4>
+                    <p>點擊連線旁的開關即可啟用，享受安全、私密的網絡瀏覽！</p>
+                </div>
+            </div>
         </section>
 
         <section class="tutorial-section">
-            <h3>第二步：匯入設定檔</h3>
-            <p>請先根據您的操作系統，從我們的「<a href="./downloads.html">客戶端下載</a>」頁面安裝官方的 WireGuard 客戶端。</p>
-            <ul>
-                <li><strong>Windows / macOS：</strong> 打開 WireGuard 程式，點擊左下角的「從檔案匯入隧道...」，然後選擇您剛剛下載的 <code>.conf</code> 檔案。</li>
-                <li><strong>iOS / Android：</strong> 打開 WireGuard App，點擊右下角的「+」號，選擇「從檔案或存檔匯入」，然後找到您的 <code>.conf</code> 檔案。</li>
-            </ul>
-        </section>
+            <h3>進階推薦：使用 TunnlTo 實現應用程式分流 (更強大)</h3>
+            <div class="highlight">
+                <p><strong>場景推薦：</strong> 您是否希望在玩線上遊戲時使用本地網絡以獲得最低延遲，同時讓您的瀏覽器通過 VPN 保障安全？TunnlTo 正是您需要的強大工具！</p>
+            </div>
+            
+            <h4>什麼是 TunnlTo？為何推薦它？</h4>
+            <p>TunnlTo 是一款基於 WireGuard 的第三方客戶端，它最核心的優勢就是提供了**「應用程式分流」**功能。這意味著您可以精準控制**哪一個應用程式**的流量走 VPN 通道，哪一個走您本地的常規網絡。</p>
 
-        <section class="tutorial-section">
-            <h3>第三步：連接與斷開</h3>
-            <p>設定檔匯入成功後，您會在客戶端的主介面看到一個新的連線項目。</p>
-            <p>點擊該項目旁邊的開關按鈕即可啟用連接。開關變為綠色，即表示您已成功連接到 MyWireGuard 伺服器。</p>
-            <p>再次點擊開關即可斷開連接。</p>
+            <div class="steps-container">
+                 <div class="step-card">
+                    <div class="step-icon">⬇️</div>
+                    <h4>第一步：下載 TunnlTo</h4>
+                    <p>TunnlTo 是一款免費的開源軟件。請從其官網下載並安裝。</p>
+                    <a href="https://www.tunnl.to/" target="_blank" rel="noopener noreferrer" class="button">前往官網</a>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">➕</div>
+                    <h4>第二步：匯入設定檔</h4>
+                    <p>打開 TunnlTo，點擊「Import tunnel(s) from file」，選擇您的 MyWireGuard <code>.conf</code> 檔案。</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">🔀</div>
+                    <h4>第三步：設定分流</h4>
+                    <p>點擊連線設定，進入 "App Routing" 頁面，選擇您希望走 VPN 的應用程式 (如 Chrome)。</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-icon">✅</div>
+                    <h4>第四步：連接並享受</h4>
+                    <p>啟用連線！現在只有您選中的 App 會通過 VPN，其他程式則不受影響，實現完美分流。</p>
+                </div>
+            </div>
         </section>
 
          <section class="tutorial-section">
-            <h3>(進階) Linux 安裝與設定</h3>
+            <h3>(伺服器/專家) Linux 安裝與設定</h3>
             <p>對於 Debian/Ubuntu 系統，您可以使用以下指令安裝：</p>
             <pre><code>sudo apt update
 sudo apt install wireguard -y</code></pre>
@@ -87,7 +133,6 @@ sudo apt install wireguard -y</code></pre>
             <p>若要斷開連接，請使用：</p>
             <pre><code>sudo wg-quick down mywg0</code></pre>
         </section>
-
     </main>
 
     <footer>
