@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>客戶查詢與常見問題 - MyWireGuard</title>
+    <title data-i18n="support-title">Customer Support & FAQ - MyWireGuard</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-61Y0GT23PH"></script>
     <script>
@@ -18,6 +18,7 @@
         header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
         .logo img { max-height: 40px; }
+        nav { display: flex; align-items: center; gap: 30px; }
         nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
         nav li { margin-left: 30px; }
         nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; }
@@ -42,6 +43,10 @@
         footer p { margin: 10px 0; }
         footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
         footer a:hover { text-decoration: underline; }
+        .language-selector { display: flex; align-items: center; gap: 10px; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.9em; transition: all 0.3s ease; }
+        .lang-btn:hover { background-color: #f0f0f0; }
+        .lang-btn.active { background-color: #007bff; color: white; border-color: #007bff; }
     </style>
 </head>
 <body>
@@ -53,103 +58,108 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="./index.html">首頁</a></li>
-                    <li><a href="./downloads.html">客戶端下載</a></li>
-                    <li><a href="./tutorials.html">使用教程</a></li>
-                    <li><a href="./support.html">客戶查詢</a></li>
+                    <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
+                    <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
+                    <li><a href="./downloads.html" data-i18n="nav-downloads">Downloads</a></li>
+                    <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
+                    <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
                 </ul>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="zh-hant">繁中</button>
+                </div>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <h2>客戶查詢與常見問題 (FAQ)</h2>
-        <p class="intro-text">遇到問題了嗎？別擔心，我們在這裏為您解答。大多數常見問題都能在這裡找到解決方案。如果問題依然存在，我們的客服團隊隨時準備為您提供幫助。</p>
+        <h2 data-i18n="support-page-title">Customer Support & FAQ</h2>
+        <p class="intro-text" data-i18n="support-intro">Having trouble? Don't worry, we're here to help. Most common issues can be resolved with the solutions below. If the problem persists, our customer service team is always ready to assist you.</p>
 
         <section class="faq-section">
-            <h3>連接與性能</h3>
+            <h3 data-i18n="connection-performance-title">Connection & Performance</h3>
             <div class="faq-item">
-                <div class="faq-question">連接後沒有網絡，無法上網怎麼辦？</div>
+                <div class="faq-question" data-i18n="no-internet-question">No internet access after connecting, what should I do?</div>
                 <div class="faq-answer">
-                    <p>這通常是 DNS 解析問題，是最常見的情況。請嘗試以下步驟：</p>
+                    <p data-i18n="no-internet-answer-intro">This is usually a DNS resolution issue, which is the most common situation. Please try the following steps:</p>
                     <ol>
-                        <li><strong>編輯設定檔：</strong> 打開 WireGuard 客戶端，選擇您的連線並點擊「編輯」。</li>
-                        <li><strong>修改 DNS：</strong> 找到 <code>[Interface]</code> 區塊下的 <code>DNS</code> 這一行。</li>
-                        <li><strong>更換為公共 DNS：</strong> 將其值修改為 <code>1.1.1.1, 8.8.8.8</code> 或 <code>8.8.4.4, 1.0.0.1</code>。</li>
-                        <li><strong>儲存並重連：</strong> 儲存您的修改，然後斷開並重新連接 VPN。</li>
+                        <li data-i18n="no-internet-step1"><strong>Edit configuration file:</strong> Open WireGuard client, select your connection and click "Edit".</li>
+                        <li data-i18n="no-internet-step2"><strong>Modify DNS:</strong> Find the <code>DNS</code> line under the <code>[Interface]</code> section.</li>
+                        <li data-i18n="no-internet-step3"><strong>Change to public DNS:</strong> Modify its value to <code>1.1.1.1, 8.8.8.8</code> or <code>8.8.4.4, 1.0.0.1</code>.</li>
+                        <li data-i18n="no-internet-step4"><strong>Save and reconnect:</strong> Save your changes, then disconnect and reconnect the VPN.</li>
                     </ol>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">點擊「啟用」後無法成功連接 (無法完成握手)？</div>
+                <div class="faq-question" data-i18n="handshake-fail-question">Cannot connect after clicking "Activate" (handshake failure)?</div>
                 <div class="faq-answer">
-                    <p>無法完成握手 (Handshake) 通常意味著您的設備無法與我們的伺服器建立初始連接。原因可能如下：</p>
+                    <p data-i18n="handshake-fail-answer-intro">Handshake failure usually means your device cannot establish initial connection with our servers. Possible reasons:</p>
                     <ul>
-                        <li><strong>網絡防火牆：</strong> 您所在的網絡（例如公司、學校或公共 WiFi）可能有防火牆阻止了 WireGuard 使用的 UDP 端口。請嘗試切換到不同的網絡（例如手機熱點）進行測試。</li>
-                        <li><strong>設定檔問題：</strong> 請確保您使用的是從我們客戶中心下載的最新設定檔，沒有手動修改過金鑰 (PublicKey) 或端點 (Endpoint) 地址。</li>
+                        <li data-i18n="handshake-fail-firewall"><strong>Network firewall:</strong> Your network (e.g., company, school, or public WiFi) may have firewalls blocking UDP ports used by WireGuard. Try switching to a different network (e.g., mobile hotspot) for testing.</li>
+                        <li data-i18n="handshake-fail-config"><strong>Configuration file issue:</strong> Please ensure you're using the latest configuration file downloaded from our customer center, without manually modifying keys (PublicKey) or endpoint addresses.</li>
                     </ul>
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">連接 VPN 後速度變慢了，如何改善？</div>
+                <div class="faq-question" data-i18n="slow-speed-question">Speed becomes slower after connecting VPN, how to improve?</div>
                 <div class="faq-answer">
-                    <p>VPN 速度受多種因素影響，但您可以嘗試以下方法來優化：</p>
+                    <p data-i18n="slow-speed-answer-intro">VPN speed is affected by multiple factors, but you can try the following methods to optimize:</p>
                     <ul>
-                        <li><strong>選擇就近節點：</strong> 物理距離是影響速度的最大因素。請盡量選擇地理位置離您最近的伺服器節點。</li>
-                        <li><strong>考慮獨享專線：</strong> 如果您需要極致的性能和穩定性，不受其他用戶影響，強烈建議您升級到我們的「獨享專線」方案。</li>
-                        <li><strong>嘗試分流工具：</strong> 參考我們教程頁面推薦的 TunnlTo 工具，讓其他程式走本地網絡，互不影響。</li>
+                        <li data-i18n="slow-speed-nearby"><strong>Choose nearby nodes:</strong> Physical distance is the biggest factor affecting speed. Please try to select server nodes geographically closest to you.</li>
+                        <li data-i18n="slow-speed-dedicated"><strong>Consider dedicated lines:</strong> If you need ultimate performance and stability without being affected by other users, we strongly recommend upgrading to our "Dedicated Line" plan.</li>
+                        <li data-i18n="slow-speed-splitting"><strong>Try splitting tools:</strong> Refer to the TunnlTo tool recommended on our tutorials page, letting other programs use local network without interference.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section class="faq-section">
-            <h3>帳戶與方案</h3>
+            <h3 data-i18n="account-plans-title">Account & Plans</h3>
             <div class="faq-item">
-                <div class="faq-question">共享節點和獨享專線有什麼區別？</div>
+                <div class="faq-question" data-i18n="shared-vs-dedicated-question">What's the difference between shared nodes and dedicated lines?</div>
                 <div class="faq-answer">
-                    <p>這是我們提供的兩種核心方案，以滿足不同用戶的需求：</p>
+                    <p data-i18n="shared-vs-dedicated-answer-intro">These are our two core plans to meet different user needs:</p>
                     <ul>
-                        <li><strong>共享節點 (Shared)：</strong> 您將與其他用戶共享伺服器的資源和 IP 地址。這是最具性價比的選擇，非常適合日常的匿名瀏覽、保障公共 WiFi 安全和訪問一般網站。</li>
-                        <li><strong>獨享專線 (Dedicated)：</strong> 您將獲得一個完全為您個人保留的 VPN 隧道和一個**固定的獨享 IP 地址**。這意味著：
+                        <li data-i18n="shared-vs-dedicated-shared"><strong>Shared Nodes:</strong> You will share server resources and IP addresses with other users. This is the most cost-effective choice, perfect for daily anonymous browsing, securing public WiFi, and accessing general websites.</li>
+                        <li data-i18n="shared-vs-dedicated-dedicated"><strong>Dedicated Lines:</strong> You will get a VPN tunnel completely reserved for you personally and a **fixed dedicated IP address**. This means:
                             <ul>
-                                <li><strong>性能更穩定：</strong> 頻寬僅供您一人使用，不受他人活動影響。</li>
-                                <li><strong>IP 純淨度高：</strong> 杜絕了因共享 IP 被某些網站（如網上銀行）限制或封鎖的風險。</li>
-                                <li><strong>專業用途首選：</strong> 非常適合需要固定 IP 進行遠程辦公、訪問公司內部系統或進行安全線上交易的用戶。</li>
+                                <li data-i18n="shared-vs-dedicated-stable"><strong>More stable performance:</strong> Bandwidth is exclusively for you, unaffected by others' activities.</li>
+                                <li data-i18n="shared-vs-dedicated-clean"><strong>Higher IP purity:</strong> Eliminates the risk of shared IP being restricted or blocked by certain websites (like online banking).</li>
+                                <li data-i18n="shared-vs-dedicated-professional"><strong>Professional use preferred:</strong> Perfect for users who need fixed IP for remote work, accessing company internal systems, or conducting secure online transactions.</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </div>
              <div class="faq-item">
-                <div class="faq-question">一個設定檔 (帳號) 可以在多少台設備上使用？</div>
+                <div class="faq-question" data-i18n="multi-device-question">How many devices can use one configuration file (account)?</div>
                 <div class="faq-answer">
-                    <p>您可以在您的所有設備上（電腦、手機、平板）安裝同一個設定檔。</p>
-                    <p>但為了保證最佳的連接穩定性和性能，我們建議**同一個設定檔在同一時間只在一台設備上啟用連接**。</p>
+                    <p data-i18n="multi-device-answer1">You can install the same configuration file on all your devices (computer, phone, tablet).</p>
+                    <p data-i18n="multi-device-answer2">But for optimal connection stability and performance, we recommend **using the same configuration file on only one device at a time**.</p>
                 </div>
             </div>
              <div class="faq-item">
-                <div class="faq-question">你們是否會記錄我的上網活動 (無日誌政策)？</div>
+                <div class="faq-question" data-i18n="no-logs-question">Do you log my online activities (no-logs policy)?</div>
                 <div class="faq-answer">
-                    <p><strong>我們嚴格遵守無日誌政策。</strong> 我們絕不會記錄、監控或儲存您的任何網絡流量、瀏覽歷史、DNS 查詢或 IP 地址。您的線上活動完全屬於您自己，我們致力於保護您的絕對私隱。</p>
+                    <p data-i18n="no-logs-answer"><strong>We strictly adhere to a no-logs policy.</strong> We never record, monitor, or store any of your network traffic, browsing history, DNS queries, or IP addresses. Your online activities are completely yours, and we are committed to protecting your absolute privacy.</p>
                 </div>
             </div>
         </section>
 
         <div class="support-cta">
-            <h3>仍然需要幫助？</h3>
-            <p>如果以上解答未能解決您的問題，請不要猶豫！<br>我們的客服團隊隨時準備為您提供一對一的支援。</p>
-            <a href="./contact.html" class="button">聯絡我們的支援團隊</a>
+            <h3 data-i18n="support-cta-title">Still need help?</h3>
+            <p data-i18n="support-cta-desc">If the above answers don't resolve your issue, please don't hesitate!<br>Our customer service team is always ready to provide one-on-one support.</p>
+            <a href="./contact.html" class="button" data-i18n="support-cta-button">Contact Our Support Team</a>
         </div>
     </main>
 
     <footer>
         <div class="container" style="max-width: 1100px;">
-            <p><strong>我們承諾 30 天無憂退款保證。</strong></p>
-            <p>Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
+            <p data-i18n="footer-copyright">Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
             <p>
-                <a href="./contact.html">聯絡方式</a> |
-                <a href="./refund.html">退款政策</a>
+                <a href="./contact.html" data-i18n="footer-contact">Contact</a> |
+                <a href="./refund.html" data-i18n="footer-refund">Refund Policy</a> |
+                <a href="./terms.html" data-i18n="footer-terms">Terms of Service</a>
             </p>
         </div>
     </footer>
@@ -187,5 +197,6 @@
         }
       })(document,"script");
     </script>
+    <script src="./language.js"></script>
 </body>
 </html>

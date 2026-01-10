@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>使用教程 - MyWireGuard</title>
+    <title data-i18n="tutorials-title">Tutorials - MyWireGuard</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-61Y0GT23PH"></script>
     <script>
@@ -18,6 +18,7 @@
         header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
         .logo img { max-height: 40px; }
+        nav { display: flex; align-items: center; gap: 30px; }
         nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
         nav li { margin-left: 30px; }
         nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; }
@@ -43,6 +44,10 @@
         footer p { margin: 10px 0; }
         footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
         footer a:hover { text-decoration: underline; }
+        .language-selector { display: flex; align-items: center; gap: 10px; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.9em; transition: all 0.3s ease; }
+        .lang-btn:hover { background-color: #f0f0f0; }
+        .lang-btn.active { background-color: #007bff; color: white; border-color: #007bff; }
     </style>
 </head>
 <body>
@@ -54,94 +59,99 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="./index.html">首頁</a></li>
-                    <li><a href="./downloads.html">客戶端下載</a></li>
-                    <li><a href="./tutorials.html">使用教程</a></li>
-                    <li><a href="./support.html">客戶查詢</a></li>
+                    <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
+                    <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
+                    <li><a href="./downloads.html" data-i18n="nav-downloads">Downloads</a></li>
+                    <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
+                    <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
                 </ul>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="zh-hant">繁中</button>
+                </div>
             </nav>
         </div>
     </header>
 
     <main class="container">
-        <h2>MyWireGuard 設定指南</h2>
+        <h2 data-i18n="tutorials-page-title">MyWireGuard Setup Guide</h2>
         
         <section class="tutorial-section">
-            <h3>基礎設定 (使用官方客戶端)</h3>
-            <p>此方法適用於希望將所有網絡流量通過 VPN 的標準用戶。操作簡單直接。</p>
+            <h3 data-i18n="basic-setup-title">Basic Setup (Using Official Client)</h3>
+            <p data-i18n="basic-setup-desc">This method is suitable for standard users who want all network traffic to go through VPN. Simple and straightforward operation.</p>
             <div class="steps-container">
                 <div class="step-card">
                     <div class="step-icon">📄</div>
-                    <h4>第一步：獲取設定檔</h4>
-                    <p>從您的客戶中心下載所需節點的 <code>.conf</code> 設定檔。</p>
+                    <h4 data-i18n="step1-title">Step 1: Get Configuration File</h4>
+                    <p data-i18n="step1-desc">Download the <code>.conf</code> configuration file for your desired node from your customer center.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-icon">📥</div>
-                    <h4>第二步：匯入設定檔</h4>
-                    <p>打開官方客戶端，選擇「從檔案匯入隧道...」並選取您的設定檔。</p>
+                    <h4 data-i18n="step2-title">Step 2: Import Configuration File</h4>
+                    <p data-i18n="step2-desc">Open the official client, select "Import tunnel(s) from file..." and choose your configuration file.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-icon">🟢</div>
-                    <h4>第三步：連接</h4>
-                    <p>點擊連線旁的開關即可啟用，享受安全、私密的網絡瀏覽！</p>
+                    <h4 data-i18n="step3-title">Step 3: Connect</h4>
+                    <p data-i18n="step3-desc">Click the switch next to the connection to enable it and enjoy secure, private web browsing!</p>
                 </div>
             </div>
         </section>
 
         <section class="tutorial-section">
-            <h3>進階推薦：使用 TunnlTo 實現應用程式分流 (更強大)</h3>
+            <h3 data-i18n="advanced-setup-title">Advanced Recommendation: Use TunnlTo for App Splitting (More Powerful)</h3>
             <div class="highlight">
-                <p><strong>場景推薦：</strong> 您是否希望在玩線上遊戲時使用本地網絡以獲得最低延遲，同時讓您的瀏覽器通過 VPN 保障安全？TunnlTo 正是您需要的強大工具！</p>
+                <p data-i18n="advanced-scenario"><strong>Recommended Scenario:</strong> Do you want to use local network for online gaming to get the lowest latency, while letting your browser go through VPN for security? TunnlTo is exactly the powerful tool you need!</p>
             </div>
             
-            <h4>什麼是 TunnlTo？為何推薦它？</h4>
-            <p>TunnlTo 是一款基於 WireGuard 的第三方客戶端，它最核心的優勢就是提供了**「應用程式分流」**功能。這意味著您可以精準控制**哪一個應用程式**的流量走 VPN 通道，哪一個走您本地的常規網絡。</p>
+            <h4 data-i18n="tunnlto-what-title">What is TunnlTo? Why do we recommend it?</h4>
+            <p data-i18n="tunnlto-what-desc">TunnlTo is a third-party client based on WireGuard. Its core advantage is providing **"App Splitting"** functionality. This means you can precisely control **which application's** traffic goes through the VPN tunnel and which goes through your local regular network.</p>
 
             <div class="steps-container">
                  <div class="step-card">
                     <div class="step-icon">⬇️</div>
-                    <h4>第一步：下載 TunnlTo</h4>
-                    <p>TunnlTo 是一款免費的開源軟件。請從其官網下載並安裝。</p>
-                    <a href="https://www.tunnl.to/" target="_blank" rel="noopener noreferrer" class="button">前往官網</a>
+                    <h4 data-i18n="tunnlto-step1-title">Step 1: Download TunnlTo</h4>
+                    <p data-i18n="tunnlto-step1-desc">TunnlTo is a free open-source software. Please download and install it from its official website.</p>
+                    <a href="https://www.tunnl.to/" target="_blank" rel="noopener noreferrer" class="button" data-i18n="tunnlto-website">Go to Official Website</a>
                 </div>
                 <div class="step-card">
                     <div class="step-icon">➕</div>
-                    <h4>第二步：匯入設定檔</h4>
-                    <p>打開 TunnlTo，點擊「Import tunnel(s) from file」，選擇您的 MyWireGuard <code>.conf</code> 檔案。</p>
+                    <h4 data-i18n="tunnlto-step2-title">Step 2: Import Configuration File</h4>
+                    <p data-i18n="tunnlto-step2-desc">Open TunnlTo, click "Import tunnel(s) from file", and select your MyWireGuard <code>.conf</code> file.</p>
                 </div>
                 <div class="step-card">
                     <div class="step-icon">🔀</div>
-                    <h4>第三步：設定分流</h4>
-                    <p>點擊連線設定，進入 "App Routing" 頁面，選擇您希望走 VPN 的應用程式 (如 Chrome)。</p>
+                    <h4 data-i18n="tunnlto-step3-title">Step 3: Configure Splitting</h4>
+                    <p data-i18n="tunnlto-step3-desc">Click connection settings, go to "App Routing" page, and select the applications you want to go through VPN (like Chrome).</p>
                 </div>
                 <div class="step-card">
                     <div class="step-icon">✅</div>
-                    <h4>第四步：連接並享受</h4>
-                    <p>啟用連線！現在只有您選中的 App 會通過 VPN，其他程式則不受影響，實現完美分流。</p>
+                    <h4 data-i18n="tunnlto-step4-title">Step 4: Connect and Enjoy</h4>
+                    <p data-i18n="tunnlto-step4-desc">Enable the connection! Now only your selected apps will go through VPN, while other programs remain unaffected, achieving perfect splitting.</p>
                 </div>
             </div>
         </section>
 
          <section class="tutorial-section">
-            <h3>(伺服器/專家) Linux 安裝與設定</h3>
-            <p>對於 Debian/Ubuntu 系統，您可以使用以下指令安裝：</p>
+            <h3 data-i18n="linux-setup-title">(Server/Expert) Linux Installation & Configuration</h3>
+            <p data-i18n="linux-setup-desc">For Debian/Ubuntu systems, you can use the following commands to install:</p>
             <pre><code>sudo apt update
 sudo apt install wireguard -y</code></pre>
-            <p>安裝完成後，將您的 <code>.conf</code> 設定檔複製到 <code>/etc/wireguard/</code> 目錄下 (例如，命名為 <code>mywg0.conf</code>)。</p>
-            <p>使用以下指令來啟動連接：</p>
+            <p data-i18n="linux-copy-desc">After installation, copy your <code>.conf</code> configuration file to the <code>/etc/wireguard/</code> directory (for example, name it <code>mywg0.conf</code>).</p>
+            <p data-i18n="linux-start-desc">Use the following command to start the connection:</p>
             <pre><code>sudo wg-quick up mywg0</code></pre>
-            <p>若要斷開連接，請使用：</p>
+            <p data-i18n="linux-stop-desc">To disconnect, use:</p>
             <pre><code>sudo wg-quick down mywg0</code></pre>
         </section>
     </main>
 
     <footer>
         <div class="container" style="max-width: 1100px;">
-            <p><strong>我們承諾 30 天無憂退款保證。</strong></p>
-            <p>Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
+            <p data-i18n="footer-copyright">Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
             <p>
-                <a href="./contact.html">聯絡方式</a> |
-                <a href="./refund.html">退款政策</a>
+                <a href="./contact.html" data-i18n="footer-contact">Contact</a> |
+                <a href="./refund.html" data-i18n="footer-refund">Refund Policy</a> |
+                <a href="./terms.html" data-i18n="footer-terms">Terms of Service</a>
             </p>
         </div>
     </footer>
@@ -162,5 +172,6 @@ sudo apt install wireguard -y</code></pre>
         }
       })(document,"script");
     </script>
+    <script src="./language.js"></script>
 </body>
 </html>

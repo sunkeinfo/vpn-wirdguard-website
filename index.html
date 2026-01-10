@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyWireGuard - 共享節點與獨享專線 WireGuard VPN 服務</title>
+    <title data-i18n="page-title">MyWireGuard - Shared Nodes & Dedicated Lines WireGuard VPN Service</title>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-61Y0GT23PH"></script>
     <script>
@@ -19,10 +19,15 @@
         header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
         .logo img { max-height: 40px; }
+        nav { display: flex; align-items: center; gap: 30px; }
         nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
         nav li { margin-left: 30px; }
         nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; }
         nav a:hover { color: #007bff; }
+        .language-selector { display: flex; align-items: center; gap: 10px; }
+        .lang-btn { background: none; border: 1px solid #ddd; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.9em; transition: all 0.3s ease; }
+        .lang-btn:hover { background-color: #f0f0f0; }
+        .lang-btn.active { background-color: #007bff; color: white; border-color: #007bff; }
         .hero { background: linear-gradient(135deg, #007bff, #0056b3); color: white; text-align: center; padding: 100px 20px; }
         .hero h1 { font-size: 3em; margin-bottom: 20px; }
         .hero p { font-size: 1.2em; margin-bottom: 30px; }
@@ -77,88 +82,93 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="./index.html">首頁</a></li>
-                    <li><a href="./downloads.html">客戶端下載</a></li>
-                    <li><a href="./tutorials.html">使用教程</a></li>
-                    <li><a href="./support.html">客戶查詢</a></li>
+                    <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
+                    <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
+                    <li><a href="./downloads.html" data-i18n="nav-downloads">Downloads</a></li>
+                    <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
+                    <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
                 </ul>
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="zh-hant">繁中</button>
+                </div>
             </nav>
         </div>
     </header>
 
     <main>
         <section class="hero">
-            <h1>告別網絡限制，擁抱數碼自由</h1>
-            <p>採用頂尖 WireGuard® 協議，提供「共享節點」與「獨享專線」兩種方案，<br>滿足您從日常瀏覽到專業應用的所有需求。</p>
-            <a href="#trial" class="button">立即開始試用</a>
+            <h1 data-i18n="hero-title">Break Free from Network Restrictions, Embrace Digital Freedom</h1>
+            <p data-i18n="hero-subtitle">Powered by cutting-edge WireGuard® protocol, offering both "Shared Nodes" and "Dedicated Lines" to meet all your needs from daily browsing to professional applications.</p>
+            <a href="#trial" class="button" data-i18n="hero-cta">Start Free Trial</a>
         </section>
         
         <section id="core-advantages" class="advantages-section">
             <div class="container">
                 <div class="advantages-grid">
-                    <div class="advantage-item"><div class="icon">🚀</div><h3>極致速度</h3><p>輕量級的 WireGuard 協議確保了最低的性能損耗和延遲，為您帶來閃電般的瀏覽、串流和下載體驗。</p></div>
-                    <div class="advantage-item"><div class="icon">🛡️</div><h3>軍規安全</h3><p>採用最先進的加密技術和嚴格的無日誌政策，您的數碼足跡將被完美隱藏，確保絕對的私隱與安全。</p></div>
-                    <div class="advantage-item"><div class="icon">🌍</div><h3>全球覆蓋</h3><p>我們在全球部署了大量高速伺服器節點，無論您身在何處，都能輕鬆連接，解鎖全球內容。</p></div>
+                    <div class="advantage-item"><div class="icon">🚀</div><h3 data-i18n="advantage-speed-title">Ultimate Speed</h3><p data-i18n="advantage-speed-desc">Lightweight WireGuard protocol ensures minimal performance loss and latency, delivering lightning-fast browsing, streaming, and downloading experience.</p></div>
+                    <div class="advantage-item"><div class="icon">🛡️</div><h3 data-i18n="advantage-security-title">Military-Grade Security</h3><p data-i18n="advantage-security-desc">Advanced encryption technology and strict no-logs policy perfectly hide your digital footprint, ensuring absolute privacy and security.</p></div>
+                    <div class="advantage-item"><div class="icon">🌍</div><h3 data-i18n="advantage-global-title">Global Coverage</h3><p data-i18n="advantage-global-desc">We deploy numerous high-speed server nodes worldwide, allowing easy connection and global content unlocking wherever you are.</p></div>
                 </div>
             </div>
         </section>
 
         <section id="trial" class="trial-section">
             <div class="container">
-                <h2>立即開始您的一週免費試用</h2>
-                <p>體驗我們遍佈全球的頂級伺服器節點，無任何承諾，隨時可享 30 天退款保證。</p>
-                <h4>您可以選擇以下任一共享節點地點開始試用：</h4>
+                <h2 data-i18n="trial-title">Start Your One-Week Free Trial Now</h2>
+                <p data-i18n="trial-subtitle">Experience our premium server nodes worldwide with no commitment and 30-day money-back guarantee.</p>
+                <h4 data-i18n="trial-choose">Choose any of the following shared node locations to start your trial:</h4>
                 <div class="regions-grid">
-                    <div class="region-card"><h3>🌎 美洲</h3><ul><li>美國 (北維吉尼亞)</li><li>美國 (俄亥俄州)</li><li>美國 (北加州)</li><li>美國 (奧勒岡州)</li><li>加拿大 (卡加利)</li><li>加拿大 (中部)</li><li>墨西哥 (中部)</li><li>南美洲 (聖保羅)</li></ul></div>
-                    <div class="region-card"><h3>🌏 亞太地區</h3><ul><li>香港</li><li>台北</li><li>東京</li><li>首爾</li><li>大阪</li><li>新加坡</li><li>馬來西亞</li><li>泰國</li><li>雅加達</li><li>孟買</li><li>海德拉巴</li><li>雪梨</li><li>墨爾本</li></ul></div>
-                    <div class="region-card"><h3>🌍 歐洲</h3><ul><li>英國 (倫敦)</li><li>愛爾蘭</li><li>法國 (巴黎)</li><li>德國 (法蘭克福)</li><li>瑞典 (斯德哥爾摩)</li><li>意大利 (米蘭)</li><li>西班牙</li><li>瑞士 (蘇黎世)</li></ul></div>
-                    <div class="region-card"><h3>🌍 中東與非洲</h3><ul><li>以色列 (特拉維夫)</li><li>阿聯酋</li><li>巴林</li><li>非洲 (開普敦)</li></ul></div>
+                    <div class="region-card"><h3 data-i18n="region-americas">🌎 Americas</h3><ul><li>United States (N. Virginia)</li><li>United States (Ohio)</li><li>United States (N. California)</li><li>United States (Oregon)</li><li>Canada (Calgary)</li><li>Canada (Central)</li><li>Mexico (Central)</li><li>South America (São Paulo)</li></ul></div>
+                    <div class="region-card"><h3 data-i18n="region-asia">🌏 Asia Pacific</h3><ul><li>Hong Kong</li><li>Taipei</li><li>Tokyo</li><li>Seoul</li><li>Osaka</li><li>Singapore</li><li>Malaysia</li><li>Thailand</li><li>Jakarta</li><li>Mumbai</li><li>Hyderabad</li><li>Sydney</li><li>Melbourne</li></ul></div>
+                    <div class="region-card"><h3 data-i18n="region-europe">🌍 Europe</h3><ul><li>United Kingdom (London)</li><li>Ireland</li><li>France (Paris)</li><li>Germany (Frankfurt)</li><li>Sweden (Stockholm)</li><li>Italy (Milan)</li><li>Spain</li><li>Switzerland (Zurich)</li></ul></div>
+                    <div class="region-card"><h3 data-i18n="region-middle-africa">🌍 Middle East & Africa</h3><ul><li>Israel (Tel Aviv)</li><li>UAE</li><li>Bahrain</li><li>Africa (Cape Town)</li></ul></div>
                 </div>
-                <a href="#why-us" class="button" style="margin-top: 30px;">查看方案詳情</a>
+                <a href="#why-us" class="button" style="margin-top: 30px;" data-i18n="trial-cta">View Plan Details</a>
             </div>
         </section>
 
         <div class="container">
-            <h2 id="why-us">為何選擇 MyWireGuard？</h2>
+            <h2 id="why-us" data-i18n="why-title">Why Choose MyWireGuard?</h2>
             <div class="features-grid">
-                <div class="feature-card"><div class="icon">🚀</div><h3>速度超快，一鍵連接</h3><p>採用先進的WireGuard協議，暢享賽事直播、下載大檔案、打線上遊戲。操作簡便，一鍵即可連接。</p></div>
-                <div class="feature-card"><div class="icon">🛡️</div><h3>強大的加密技術</h3><p>運用業界領先的 AES 256 位元加密技術來隱藏您的位置並混淆您的網絡流量。讓您的網絡活動免受任何人監視。</p></div>
-                <div class="feature-card"><div class="icon">📜</div><h3>嚴格的無日誌政策</h3><p>我們絕不記錄、分享或出售您的數據。我們的總部設在羅馬ニ亞，該國的私隱法為您提供強而有力的保護。</p></div>
-                <div class="feature-card"><div class="icon">🔑</div><h3>獨享專線選項</h3><p>需要固定 IP 和極致性能？我們提供獨享專線方案，隧道和 IP 地址僅供您一人使用，是遠程辦公和專業應用的最佳選擇。</p></div>
-                <div class="feature-card"><div class="icon">🇭🇰🇹🇼</div><h3>專屬優化，直連港台</h3><p>我們深知香港、台灣用戶的特殊網絡環境，因此在節點選擇和網絡優化上投入大量精力，確保您獲得最佳的本地化體驗。</p></div>
-                <div class="feature-card"><div class="icon">💬</div><h3>24/7 全天候客戶支援</h3><p>隨時透過即時聊天或電子郵件聯繫我們。我們響應迅速，並支援多種語言，隨時為您解決問題。</p></div>
+                <div class="feature-card"><div class="icon">🚀</div><h3 data-i18n="feature-speed-title">Ultra-Fast, One-Click Connection</h3><p data-i18n="feature-speed-desc">Advanced WireGuard protocol for smooth live streaming, large file downloads, and online gaming. Simple operation with one-click connection.</p></div>
+                <div class="feature-card"><div class="icon">🛡️</div><h3 data-i18n="feature-encryption-title">Powerful Encryption Technology</h3><p data-i18n="feature-encryption-desc">Industry-leading AES 256-bit encryption to hide your location and obfuscate network traffic, keeping your online activities private.</p></div>
+                <div class="feature-card"><div class="icon">📜</div><h3 data-i18n="feature-nolog-title">Strict No-Logs Policy</h3><p data-i18n="feature-nolog-desc">We never record, share, or sell your data. Headquartered in Romania, where privacy laws provide strong protection.</p></div>
+                <div class="feature-card"><div class="icon">🔑</div><h3 data-i18n="feature-dedicated-title">Dedicated Line Option</h3><p data-i18n="feature-dedicated-desc">Need fixed IP and ultimate performance? Our dedicated line plans offer exclusive tunnels and IP addresses for remote work and professional applications.</p></div>
+                <div class="feature-card"><div class="icon">🇭🇰🇹🇼</div><h3 data-i18n="feature-hktw-title">Optimized for Hong Kong & Taiwan</h3><p data-i18n="feature-hktw-desc">Understanding the unique network environment of Hong Kong and Taiwan users, we invest heavily in node selection and network optimization for the best localized experience.</p></div>
+                <div class="feature-card"><div class="icon">💬</div><h3 data-i18n="feature-support-title">24/7 Customer Support</h3><p data-i18n="feature-support-desc">Contact us anytime via live chat or email. We respond quickly and support multiple languages to solve your problems.</p></div>
             </div>
 
             <section id="pricing">
-                <h2>選擇最適合您的方案</h2>
+                <h2 data-i18n="pricing-title">Choose the Plan That Suits You Best</h2>
                 <div class="pricing-container">
                     <div class="price-card">
-                        <h3>共享節點</h3>
-                        <p class="description">最具性價比的選擇，適合日常瀏覽、串流娛樂和保障個人私隱。</p>
+                        <h3 data-i18n="shared-title">Shared Nodes</h3>
+                        <p class="description" data-i18n="shared-desc">Most cost-effective choice for daily browsing, streaming entertainment, and personal privacy protection.</p>
                         <ul>
-                            <li>連接我們所有的共享伺服器</li>
-                            <li>與其他用戶共享 IP 地址</li>
-                            <li>極致的匿名性</li>
-                            <li>所有核心安全功能</li>
+                            <li data-i18n="shared-feature1">Connect to all our shared servers</li>
+                            <li data-i18n="shared-feature2">Share IP addresses with other users</li>
+                            <li data-i18n="shared-feature3">Ultimate anonymity</li>
+                            <li data-i18n="shared-feature4">All core security features</li>
                         </ul>
-                        <div class="price-main">$2.99 <span style="font-size: 0.5em;">美元/月</span></div>
-                        <div class="price-secondary">或 $29.99 美元/年</div>
-                        <a href="https://snaagkster.gumroad.com/l/order" target="_blank" rel="noopener noreferrer" class="button">選擇共享方案</a>
+                        <div class="price-main" data-i18n="shared-price">$2.99 <span style="font-size: 0.5em;">USD/month</span></div>
+                        <div class="price-secondary" data-i18n="shared-price-yearly">or $29.99 USD/year</div>
+                        <a href="./pricing.html" target="_blank" rel="noopener noreferrer" class="button" data-i18n="shared-cta">Choose Shared Plan</a>
                     </div>
                     <div class="price-card recommended">
-                        <div class="recommended-badge">專業推薦</div>
-                        <h3>獨享專線</h3>
-                        <p class="description">為您個人專屬的 VPN 隧道，提供無與倫比的性能、穩定性和固定的 IP 地址。</p>
+                        <div class="recommended-badge" data-i18n="dedicated-badge">Professional Recommended</div>
+                        <h3 data-i18n="dedicated-title">Dedicated Line</h3>
+                        <p class="description" data-i18n="dedicated-desc">Your personal VPN tunnel providing unmatched performance, stability, and fixed IP address.</p>
                         <ul>
-                            <li><strong>您專屬的 VPN 隧道</strong></li>
-                            <li><strong>固定的獨享 IP 地址</strong></li>
-                            <li>杜絕因他人行為導致 IP 被封鎖</li>
-                            <li>遠程辦公、訪問權限系統的最佳選擇</li>
-                            <li>最高的穩定性和性能</li>
+                            <li data-i18n="dedicated-feature1"><strong>Your exclusive VPN tunnel</strong></li>
+                            <li data-i18n="dedicated-feature2"><strong>Fixed dedicated IP address</strong></li>
+                            <li data-i18n="dedicated-feature3">Avoid IP blocking from others' actions</li>
+                            <li data-i18n="dedicated-feature4">Best choice for remote work and access control systems</li>
+                            <li data-i18n="dedicated-feature5">Highest stability and performance</li>
                         </ul>
-                        <div class="price-main">$9.99 <span style="font-size: 0.5em;">美元/月</span></div>
-                        <div class="price-secondary">或 $99.99 美元/年</div>
-                        <a href="https://snaagkster.gumroad.com/l/order-dedicated" target="_blank" rel="noopener noreferrer" class="button">升級至獨享專線</a>
+                        <div class="price-main" data-i18n="dedicated-price">$9.99 <span style="font-size: 0.5em;">USD/month</span></div>
+                        <div class="price-secondary" data-i18n="dedicated-price-yearly">or $99.99 USD/year</div>
+                        <a href="./pricing.html" target="_blank" rel="noopener noreferrer" class="button" data-i18n="dedicated-cta">Upgrade to Dedicated Line</a>
                     </div>
                 </div>
             </section>
@@ -167,11 +177,11 @@
 
     <footer>
         <div class="container">
-            <p><strong>我們承諾 30 天無憂退款保證。</strong></p>
-            <p>Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
+            <p data-i18n="footer-copyright">Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
             <p>
-                <a href="./contact.html">聯絡方式</a> |
-                <a href="./refund.html">退款政策</a>
+                <a href="./contact.html" data-i18n="footer-contact">Contact</a> |
+                <a href="./refund.html" data-i18n="footer-refund">Refund Policy</a> |
+                <a href="./terms.html" data-i18n="footer-terms">Terms of Service</a>
             </p>
         </div>
     </footer>
@@ -192,5 +202,6 @@
         }
       })(document,"script");
     </script>
+    <script src="./language.js"></script>
 </body>
 </html>
