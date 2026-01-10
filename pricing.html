@@ -666,7 +666,7 @@
                     
                     // Open PayPal in new window
                     const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal2017august@sunke.info&item_name=${encodeURIComponent('MyWireGuard - ' + plans[selectedPlan].name + ' (' + selectedBilling + ')')}&amount=${price}&currency_code=USD&return=https://mywireguard.com/success&cancel_return=https://mywireguard.com/cancel`;
-                    window.open(paypalUrl, '_blank');
+                    window.location.href = paypalUrl;
                 })
                 .catch(error => {
                     console.error('Error:', error);
