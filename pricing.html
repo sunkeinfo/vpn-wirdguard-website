@@ -40,7 +40,13 @@
         .content-wrapper {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
+        }
+        
+        @media (min-width: 768px) {
+            .content-wrapper {
+                padding: 0 20px;
+            }
         }
         
         .checkout-container {
@@ -216,22 +222,70 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        nav li {
+            margin: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        @media (min-width: 768px) {
+            nav {
+                gap: 30px;
+            }
+            nav ul {
+                gap: 0;
+            }
+            nav li {
+                margin-left: 30px;
+            }
+            nav a {
+                padding: 0;
+                font-size: 16px;
+            }
+        }
         .logo img { max-height: 40px; }
-        nav { display: flex; align-items: center; gap: 30px; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
-        nav li { margin-left: 30px; }
-        nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; }
         nav a:hover { color: #007bff; }
-        .language-selector { display: flex; align-items: center; gap: 10px; }
+        .language-selector { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
         .lang-btn { background: none; border: 1px solid #ddd; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.9em; transition: all 0.3s ease; }
         .lang-btn:hover { background-color: #f0f0f0; }
         .lang-btn.active { background-color: #007bff; color: white; border-color: #007bff; }
         
-        .row { display: flex; }
-        .col-lg-5 { width: 42%; margin-right: 2%; }
-        .col-lg-7 { width: 56%; }
+        .row { display: flex; flex-wrap: wrap; }
+        .col-lg-5 { width: 100%; margin-right: 0; margin-bottom: 20px; }
+        .col-lg-7 { width: 100%; }
+        
+        @media (min-width: 768px) {
+            .row { flex-wrap: nowrap; }
+            .col-lg-5 { width: 42%; margin-right: 2%; margin-bottom: 0; }
+            .col-lg-7 { width: 56%; }
+        }
         
         .plan-selected {
             border: 2px solid var(--primary-color) !important;
@@ -345,57 +399,58 @@
                 <h4 style="margin: 0;" data-i18n="choose-location">Choose Server Location</h4>
             </div>
             <div style="padding: 20px;">
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px;">
                     <div style="background: #f8f9fa; border-radius: 10px; padding: 15px;">
                         <h6 data-i18n="region-americas" style="margin: 0 0 10px 0; font-size: 0.9em; color: #007bff;">🌎 Americas</h6>
                         <div style="display: flex; flex-direction: column; gap: 5px;">
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="us-virginia"> US (Virginia)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="us-ohio"> US (Ohio)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="us-california"> US (California)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="us-oregon"> US (Oregon)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="ca-calgary"> Canada (Calgary)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="ca-central"> Canada (Central)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="mx-central"> Mexico</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="br-saopaulo"> Brazil</label>
-                        </div>
-                    </div>
-                    <div style="background: #f8f9fa; border-radius: 10px; padding: 15px;">
-                        <h6 data-i18n="region-europe" style="margin: 0 0 10px 0; font-size: 0.9em; color: #007bff;">🌍 Europe</h6>
-                        <div style="display: flex; flex-direction: column; gap: 5px;">
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="uk-london"> UK (London)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="ie-ireland"> Ireland</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="fr-paris"> France (Paris)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="de-frankfurt"> Germany</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="se-stockholm"> Sweden</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="it-milan"> Italy (Milan)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="es-spain"> Spain</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="ch-zurich"> Switzerland</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="us-virginia"> United States (N. Virginia)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="us-ohio"> United States (Ohio)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="us-california"> United States (N. California)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="us-oregon"> United States (Oregon)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="canada-calgary"> Canada (Calgary)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="canada-central"> Canada (Central)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="mexico-central"> Mexico (Central)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="brazil-sao-paulo"> South America (São Paulo)</label>
                         </div>
                     </div>
                     <div style="background: #f8f9fa; border-radius: 10px; padding: 15px;">
                         <h6 data-i18n="region-asia" style="margin: 0 0 10px 0; font-size: 0.9em; color: #007bff;">🌏 Asia Pacific</h6>
                         <div style="display: flex; flex-direction: column; gap: 5px;">
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="hk-hongkong"> Hong Kong</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="tw-taipei"> Taipei</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="jp-tokyo"> Tokyo</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="kr-seoul"> Seoul</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="jp-osaka"> Osaka</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="sg-singapore"> Singapore</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="my-malaysia"> Malaysia</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="th-thailand"> Thailand</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="id-jakarta"> Jakarta</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="in-mumbai"> Mumbai</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="au-sydney"> Sydney</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="au-melbourne"> Melbourne</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="hong-kong"> Hong Kong</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="taipei"> Taipei</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="tokyo"> Tokyo</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="seoul"> Seoul</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="osaka"> Osaka</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="singapore"> Singapore</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="malaysia"> Malaysia</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="thailand"> Thailand</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="jakarta"> Jakarta</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="mumbai"> Mumbai</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="hyderabad"> Hyderabad</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="sydney"> Sydney</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="melbourne"> Melbourne</label>
+                        </div>
+                    </div>
+                    <div style="background: #f8f9fa; border-radius: 10px; padding: 15px;">
+                        <h6 data-i18n="region-europe" style="margin: 0 0 10px 0; font-size: 0.9em; color: #007bff;">🌍 Europe</h6>
+                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="uk-london"> United Kingdom (London)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="ireland"> Ireland</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="france-paris"> France (Paris)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="germany-frankfurt"> Germany (Frankfurt)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="sweden-stockholm"> Sweden (Stockholm)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="italy-milan"> Italy (Milan)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="spain"> Spain</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="switzerland-zurich"> Switzerland (Zurich)</label>
                         </div>
                     </div>
                     <div style="background: #f8f9fa; border-radius: 10px; padding: 15px;">
                         <h6 data-i18n="region-middle-africa" style="margin: 0 0 10px 0; font-size: 0.9em; color: #007bff;">🌍 Middle East & Africa</h6>
                         <div style="display: flex; flex-direction: column; gap: 5px;">
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="il-telaviv"> Israel (Tel Aviv)</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="ae-uae"> UAE</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="bh-bahrain"> Bahrain</label>
-                            <label style="font-size: 0.85em;"><input type="radio" name="location" value="za-capetown"> Africa (Cape Town)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="israel-tel-aviv"> Israel (Tel Aviv)</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="uae"> UAE</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="bahrain"> Bahrain</label>
+                            <label style="font-size: 0.8em;"><input type="radio" name="location" value="south-africa-cape-town"> Africa (Cape Town)</label>
                         </div>
                     </div>
                 </div>
