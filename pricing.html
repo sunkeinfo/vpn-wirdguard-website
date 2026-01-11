@@ -487,21 +487,28 @@
                         <div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px;">
                             <div style="display: flex; align-items: center; margin-bottom: 10px;">
                                 <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal" style="height: 25px;">
-                                <span style="margin-left: 10px; font-weight: bold;">PayPal Payment</span>
+                                <span style="margin-left: 10px; font-weight: bold;">Secure Setup via PayPal</span>
                             </div>
                             <p style="margin: 10px 0; color: #666; font-size: 0.9em;">You will be redirected to PayPal to complete your payment securely.</p>
                             <label style="display: flex; align-items: flex-start; margin: 15px 0;">
                                 <input type="checkbox" id="agreement" required checked style="margin-right: 8px; margin-top: 2px;">
-                                <span style="font-size: 0.9em;">I agree to the <a href="./terms.html" target="_blank" style="color: #007bff; text-decoration: none;">Terms of Service</a> and authorize Mywireguard.com to charge my payment method for the monthly premium. *</span>
+                                <span style="font-size: 0.9em;">I agree to the <a href="./terms.html" target="_blank" style="color: #007bff; text-decoration: none;">Terms of Service</a> and authorize my 7-day free trial. Billing starts only after the trial ends, and I can cancel at any time.</span>
                             </label>
                         </div>
                     </div>
                     <div style="text-align: center;">
-                        <button type="button" onclick="processPayment()" style="background: #ffc439; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-size: 16px; font-weight: bold; color: #003087; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-bottom: 15px;">
+                        <button type="button" onclick="processPayment()" style="background: #ffc439; border: none; padding: 12px 30px; border-radius: 25px; cursor: pointer; font-size: 16px; font-weight: bold; color: #003087; display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; margin-bottom: 8px;">
                             <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal" style="height: 25px;">
-                            <span>Pay with PayPal - <span id="finalPrice">$2.99</span></span>
+                            <span>Start My 7-Day Free Trial</span>
                             <span style="font-size: 12px; color: #28a745; margin-left: 15px;">🔒 Secure</span>
                         </button>
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <p style="margin: 0; font-size: 0.85em; color: #666;">$0.00 Due Today</p>
+                            <p style="margin: 2px 0 0 0; font-size: 0.8em; color: #999;">Then <span id="finalPrice">$2.99</span>/<span id="billingPeriod">month</span>. You won't be charged today. Cancel anytime</p>
+                        </div>
+                        <div style="text-align: center; margin-bottom: 15px;">
+                            <p style="margin: 0; font-size: 0.9em; color: #666;">🛡️ No commitment. Cancel with one click in your dashboard.</p>
+                        </div>
                         <div style="text-align: center; margin-top: 15px;">
                             <strong style="color: #28a745;">30-Day Money Back Guarantee</strong>
                             <p style="margin: 5px 0 0 0; font-size: 0.9em; color: #666;">Not satisfied? Get a full refund within 30 days, no questions asked.</p>
@@ -579,6 +586,7 @@
             if (selectedPlan) {
                 const price = plans[selectedPlan][selectedBilling];
                 document.getElementById('finalPrice').textContent = '$' + price;
+                document.getElementById('billingPeriod').textContent = selectedBilling === 'yearly' ? 'year' : 'month';
                 document.getElementById('paypal_amount').value = price;
                 document.getElementById('paypal_item_name').value = `MyWireGuard - ${plans[selectedPlan].name} (${selectedBilling})`;
             }
