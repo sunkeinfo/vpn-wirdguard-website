@@ -1,0 +1,12 @@
+# robots.txt for mywireguard.com
+# Generated for SEO optimization
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private paths (if any in future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://mywireguard.com/sitemap.xml
