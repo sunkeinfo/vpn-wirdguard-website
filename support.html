@@ -103,38 +103,11 @@
         <p class="intro-text" data-i18n="support-intro">Having trouble? Don't worry, we're here to help. Most common issues can be resolved with the solutions below. If the problem persists, our customer service team is always ready to assist you.</p>
 
         <section class="faq-section">
-            <h3 data-i18n="connection-performance-title">Connection & Performance</h3>
+            <h3 data-i18n="general-title">General</h3>
             <div class="faq-item">
-                <div class="faq-question" data-i18n="no-internet-question">No internet access after connecting, what should I do?</div>
+                <div class="faq-question" data-i18n="what-is-wireguard-question">What is WireGuard?</div>
                 <div class="faq-answer">
-                    <p data-i18n="no-internet-answer-intro">This is usually a DNS resolution issue, which is the most common situation. Please try the following steps:</p>
-                    <ol>
-                        <li data-i18n="no-internet-step1"><strong>Edit configuration file:</strong> Open WireGuard client, select your connection and click "Edit".</li>
-                        <li data-i18n="no-internet-step2"><strong>Modify DNS:</strong> Find the <code>DNS</code> line under the <code>[Interface]</code> section.</li>
-                        <li data-i18n="no-internet-step3"><strong>Change to public DNS:</strong> Modify its value to <code>1.1.1.1, 8.8.8.8</code> or <code>8.8.4.4, 1.0.0.1</code>.</li>
-                        <li data-i18n="no-internet-step4"><strong>Save and reconnect:</strong> Save your changes, then disconnect and reconnect the VPN.</li>
-                    </ol>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="handshake-fail-question">Cannot connect after clicking "Activate" (handshake failure)?</div>
-                <div class="faq-answer">
-                    <p data-i18n="handshake-fail-answer-intro">Handshake failure usually means your device cannot establish initial connection with our servers. Possible reasons:</p>
-                    <ul>
-                        <li data-i18n="handshake-fail-firewall"><strong>Network firewall:</strong> Your network (e.g., company, school, or public WiFi) may have firewalls blocking UDP ports used by WireGuard. Try switching to a different network (e.g., mobile hotspot) for testing.</li>
-                        <li data-i18n="handshake-fail-config"><strong>Configuration file issue:</strong> Please ensure you're using the latest configuration file downloaded from our customer center, without manually modifying keys (PublicKey) or endpoint addresses.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="slow-speed-question">Speed becomes slower after connecting VPN, how to improve?</div>
-                <div class="faq-answer">
-                    <p data-i18n="slow-speed-answer-intro">VPN speed is affected by multiple factors, but you can try the following methods to optimize:</p>
-                    <ul>
-                        <li data-i18n="slow-speed-nearby"><strong>Choose nearby nodes:</strong> Physical distance is the biggest factor affecting speed. Please try to select server nodes geographically closest to you.</li>
-                        <li data-i18n="slow-speed-dedicated"><strong>Consider dedicated lines:</strong> If you need ultimate performance and stability without being affected by other users, we strongly recommend upgrading to our "Dedicated Line" plan.</li>
-                        <li data-i18n="slow-speed-splitting"><strong>Try splitting tools:</strong> Refer to the TunnlTo tool recommended on our tutorials page, letting other programs use local network without interference.</li>
-                    </ul>
+                    <p data-i18n="what-is-wireguard-answer">WireGuard® is a modern, open-source VPN protocol built directly into the Linux kernel. Compared to older protocols like OpenVPN or IPsec, it uses far less code (around 4,000 lines), which means a smaller attack surface, easier security auditing, and noticeably faster connection speeds and battery life. MyWireGuard uses this protocol to encrypt all of your traffic and route it through our global server network.</p>
                 </div>
             </div>
         </section>
@@ -142,7 +115,20 @@
         <section class="faq-section">
             <h3 data-i18n="account-plans-title">Account & Plans</h3>
             <div class="faq-item">
-                <div class="faq-question" data-i18n="shared-vs-dedicated-question">What's the difference between shared nodes and dedicated lines?</div>
+                <div class="faq-question" data-i18n="trial-work-question">How does the 7-day free trial work?</div>
+                <div class="faq-answer">
+                    <p data-i18n="trial-work-answer-intro">Every plan — Shared Nodes and Dedicated Line — includes a full-featured 7-day free trial. Here's how it works:</p>
+                    <ul>
+                        <li data-i18n="trial-work-step1">Sign up and choose your plan, server location, and billing cycle.</li>
+                        <li data-i18n="trial-work-step2">Your payment method is verified, but you are charged $0.00 today.</li>
+                        <li data-i18n="trial-work-step3">You get instant access to your configuration file and can start using the service right away.</li>
+                        <li data-i18n="trial-work-step4">If you don't cancel, your subscription automatically converts to a paid plan at the end of the 7 days, billed at the price shown for your chosen plan and billing cycle.</li>
+                        <li data-i18n="trial-work-step5">You can cancel anytime during the trial and you won't be charged at all.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="shared-vs-dedicated-question">What is the difference between Shared and Dedicated?</div>
                 <div class="faq-answer">
                     <p data-i18n="shared-vs-dedicated-answer-intro">These are our two core plans to meet different user needs:</p>
                     <ul>
@@ -158,16 +144,46 @@
                 </div>
             </div>
              <div class="faq-item">
-                <div class="faq-question" data-i18n="multi-device-question">How many devices can use one configuration file (account)?</div>
+                <div class="faq-question" data-i18n="multi-device-question">How many devices can I use simultaneously?</div>
                 <div class="faq-answer">
                     <p data-i18n="multi-device-answer1">You can install the same configuration file on all your devices (computer, phone, tablet).</p>
                     <p data-i18n="multi-device-answer2">But for optimal connection stability and performance, we recommend **using the same configuration file on only one device at a time**.</p>
                 </div>
             </div>
              <div class="faq-item">
-                <div class="faq-question" data-i18n="no-logs-question">Do you log my online activities (no-logs policy)?</div>
+                <div class="faq-question" data-i18n="no-logs-question">Do you keep logs of my activity?</div>
                 <div class="faq-answer">
                     <p data-i18n="no-logs-answer"><strong>We strictly adhere to a no-logs policy.</strong> We never record, monitor, or store any of your network traffic, browsing history, DNS queries, or IP addresses. Your online activities are completely yours, and we are committed to protecting your absolute privacy.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="receive-config-question">How do I receive my configuration file?</div>
+                <div class="faq-answer">
+                    <p data-i18n="receive-config-answer">After you complete checkout, we automatically generate a personal .conf configuration file for your selected plan and server location, and email it to the address you provided — usually within a few minutes. Just download the attached file and import it into the official WireGuard client (or TunnlTo) to connect. See our Tutorials page for step-by-step import instructions.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="change-location-question">Can I change my server location?</div>
+                <div class="faq-answer">
+                    <p data-i18n="change-location-answer">Yes. On the Shared Nodes plan, you can download a new .conf file for any other location from your customer center at any time. On a Dedicated Line, since your dedicated IP is tied to a specific physical location, changing regions requires provisioning a new IP — please contact our support team and we'll set up the new location for you, usually within a few hours.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="cancel-subscription-question">How do I cancel my subscription?</div>
+                <div class="faq-answer">
+                    <p data-i18n="cancel-subscription-answer">You can cancel anytime, with no cancellation fees. Just email support@mywireguard.com from your registered email address and we'll cancel your subscription for you — you'll keep access until the end of your current billing period. If you cancel during the 7-day free trial, you won't be charged at all.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="refund-faq-question">What is your refund policy?</div>
+                <div class="faq-answer">
+                    <p><span data-i18n="refund-faq-answer">We offer a 30-day money-back guarantee on all plans. If you're not satisfied for any reason within 30 days of your first payment, email support@mywireguard.com with "Refund Request" in the subject line and we'll process a full refund, typically within 48 hours.</span> <a href="./refund.html" data-i18n="refund-faq-link">See our Refund Policy page for full details.</a></p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" data-i18n="payment-methods-question">Which payment methods do you accept?</div>
+                <div class="faq-answer">
+                    <p data-i18n="payment-methods-answer">We process all payments securely through Gumroad, our payment partner. Gumroad accepts all major credit and debit cards (Visa, Mastercard, American Express, Discover) as well as PayPal in supported regions. No payment information is ever stored on our own servers.</p>
                 </div>
             </div>
         </section>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VPN Pricing Plans - MyWireGuard | Shared Nodes & Dedicated Lines</title>
-    <meta name="description" content="Choose your MyWireGuard VPN plan. Shared Nodes from $2.99/month or Dedicated Line from $9.99/month. 7-day free trial, 30-day money-back guarantee. Secure checkout via PayPal.">
+    <meta name="description" content="Choose your MyWireGuard VPN plan. Shared Nodes from $2.99/month or Dedicated Line from $9.99/month. 7-day free trial, 30-day money-back guarantee. Secure online checkout.">
     <meta name="keywords" content="WireGuard VPN pricing, VPN plans, shared VPN plan, dedicated VPN plan, VPN subscription, buy VPN">
     <link rel="canonical" href="https://mywireguard.com/pricing.html">
     <!-- Open Graph / Social Media -->
@@ -185,21 +185,6 @@
         .security-badge {
             text-align: center;
             color: #6c757d;
-        }
-        
-        .btn-paypal {
-            background: #0070ba;
-            border: none;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        
-        .btn-paypal:hover {
-            background: #005ea6;
-            color: white;
         }
         
         .form-control {
@@ -573,17 +558,6 @@
         </div>
         </div>
         
-        <!-- PayPal Form -->
-        <form id="paypalForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display: none;">
-            <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="paypal2017august@sunke.info">
-            <input type="hidden" name="item_name" id="paypal_item_name" value="MyWireGuard VPN Service">
-            <input type="hidden" name="amount" id="paypal_amount" value="2.99">
-            <input type="hidden" name="currency_code" value="USD">
-            <input type="hidden" name="return" value="https://mywireguard.com/success">
-            <input type="hidden" name="cancel_return" value="https://mywireguard.com/cancel">
-        </form>
-
     </div>
 
 <footer>
@@ -641,8 +615,6 @@
                 const price = plans[selectedPlan][selectedBilling];
                 document.getElementById('finalPrice').textContent = '$' + price;
                 document.getElementById('billingPeriod').textContent = selectedBilling === 'yearly' ? 'year' : 'month';
-                document.getElementById('paypal_amount').value = price;
-                document.getElementById('paypal_item_name').value = `MyWireGuard - ${plans[selectedPlan].name} (${selectedBilling})`;
             }
         }
         
@@ -702,15 +674,13 @@
                     timestamp: new Date().toISOString()
                 };
 
-                const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=${encodeURIComponent('paypal2017august@sunke.info')}&item_name=${encodeURIComponent('MyWireGuard - ' + plans[selectedPlan].name + ' (' + selectedBilling + ')')}&amount=${price}&currency_code=USD&return=${encodeURIComponent('https://mywireguard.com/success')}&cancel_return=${encodeURIComponent('https://mywireguard.com/cancel')}`;
-
-                // Show a "processing" overlay — PayPal is only mentioned here, after the user has already confirmed.
+                // Show a "processing" overlay while the order is recorded before handing off to checkout.
                 const processing = document.createElement('div');
                 processing.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:10000;display:flex;align-items:center;justify-content:center;';
                 processing.innerHTML = '<div style="background:#fff;padding:32px 40px;border-radius:16px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,0.3);">'
                     + '<div style="font-size:2.2rem;margin-bottom:12px;">⏳</div>'
                     + '<div style="font-size:1.1rem;font-weight:600;color:#333;margin-bottom:6px;">Processing your order...</div>'
-                    + '<div style="font-size:.85rem;color:#888;">Redirecting to PayPal in a moment</div>'
+                    + '<div style="font-size:.85rem;color:#888;">Redirecting to checkout in a moment</div>'
                     + '</div>';
                 document.body.appendChild(processing);
 
@@ -741,7 +711,7 @@
 
                 // Submit to Google Sheets — fire-and-forget, GET + no-cors avoids a CORS preflight.
                 try {
-                    const gasUrl = 'https://script.google.com/macros/s/AKfycbwE8OnAtUYEri8kB4bMteHUd2XmoC2DHVF_L0xqG-FBVRQNHe1aH-D4Y7ks_MAIiFdYEg/exec'
+                    const gasUrl = 'https://script.google.com/macros/s/AKfycby_ISUS-KPU23M4qcGPIdeqjKyBbIVHAR8BY9cXR6dT1a58pL18Dnf64BlG7vxsaImByA/exec'
                         + '?email='    + encodeURIComponent(email)
                         + '&username=' + encodeURIComponent(name)
                         + '&plan='     + encodeURIComponent(plans[selectedPlan].name)
@@ -758,13 +728,22 @@
 
                 // Redirect after a short delay regardless of the notification/sheet result.
                 setTimeout(function() {
-                    window.location.href = paypalUrl;
+                    window.location.href = buildGumroadCheckoutUrl(email, name);
                 }, 1500);
             };
-            
+
             window.cancelOrder = function() {
                 document.body.removeChild(confirmDialog);
             };
+        }
+
+        // Checkout link: wanted=true jumps straight to the card-entry step; email and Full name
+        // are pre-filled via URL params so the customer doesn't re-enter info already given above.
+        function buildGumroadCheckoutUrl(email, name) {
+            return 'https://snaagkster.gumroad.com/l/order'
+                + '?wanted=true'
+                + '&email=' + encodeURIComponent(email)
+                + '&' + encodeURIComponent('Full name') + '=' + encodeURIComponent(name);
         }
     </script>
     
