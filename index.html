@@ -70,10 +70,8 @@
         nav li { margin: 0; }
         nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; padding: 8px 12px; border-radius: 4px; font-size: 14px; }
         nav a:hover { color: #007bff; }
-        .language-selector { display: flex; align-items: center; gap: 10px; }
-        .lang-btn { background: none; border: 1px solid #ddd; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.9em; transition: all 0.3s ease; }
-        .lang-btn:hover { background-color: #f0f0f0; }
-        .lang-btn.active { background-color: #007bff; color: white; border-color: #007bff; }
+        .nav-trial-btn { display: inline-block; background: #e44d26; color: white !important; padding: 8px 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; transition: all 0.3s ease; white-space: nowrap; }
+        .nav-trial-btn:hover { background: #c73d1a; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(228,77,38,0.4); }
         
         @media (min-width: 768px) {
             nav { gap: 30px; }
@@ -141,10 +139,7 @@
                     <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
                     <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
                 </ul>
-                <div class="language-selector">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="zh-hant">繁中</button>
-                </div>
+                <a href="./pricing.html" class="nav-trial-btn">Start Free Trial</a>
             </nav>
         </div>
     </header>
@@ -188,41 +183,27 @@
                 <div class="feature-card"><div class="icon">🛡️</div><h3 data-i18n="feature-encryption-title">Powerful Encryption Technology</h3><p data-i18n="feature-encryption-desc">Industry-leading AES 256-bit encryption to hide your location and obfuscate network traffic, keeping your online activities private.</p></div>
                 <div class="feature-card"><div class="icon">📜</div><h3 data-i18n="feature-nolog-title">Strict No-Logs Policy</h3><p data-i18n="feature-nolog-desc">We never record, share, or sell your data. Headquartered in Romania, where privacy laws provide strong protection.</p></div>
                 <div class="feature-card"><div class="icon">🔑</div><h3 data-i18n="feature-dedicated-title">Dedicated Line Option</h3><p data-i18n="feature-dedicated-desc">Need fixed IP and ultimate performance? Our dedicated line plans offer exclusive tunnels and IP addresses for remote work and professional applications.</p></div>
-                <div class="feature-card"><div class="icon">🇭🇰🇹🇼</div><h3 data-i18n="feature-hktw-title">Optimized for Hong Kong & Taiwan</h3><p data-i18n="feature-hktw-desc">Understanding the unique network environment of Hong Kong and Taiwan users, we invest heavily in node selection and network optimization for the best localized experience.</p></div>
+                <div class="feature-card"><div class="icon" style="font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;">🇭🇰🇹🇼</div><h3 data-i18n="feature-hktw-title">Optimized for Hong Kong & Taiwan</h3><p data-i18n="feature-hktw-desc">Understanding the unique network environment of Hong Kong and Taiwan users, we invest heavily in node selection and network optimization for the best localized experience.</p></div>
                 <div class="feature-card"><div class="icon">💬</div><h3 data-i18n="feature-support-title">24/7 Customer Support</h3><p data-i18n="feature-support-desc">Contact us anytime via live chat or email. We respond quickly and support multiple languages to solve your problems.</p></div>
             </div>
 
             <section id="pricing">
                 <h2 data-i18n="pricing-title">Choose the Plan That Suits You Best</h2>
-                <div class="pricing-container">
-                    <div class="price-card">
-                        <h3 data-i18n="shared-title">Shared Nodes</h3>
-                        <p class="description" data-i18n="shared-desc">Most cost-effective choice for daily browsing, streaming entertainment, and personal privacy protection.</p>
-                        <ul>
-                            <li data-i18n="shared-feature1">Connect to all our shared servers</li>
-                            <li data-i18n="shared-feature2">Share IP addresses with other users</li>
-                            <li data-i18n="shared-feature3">Ultimate anonymity</li>
-                            <li data-i18n="shared-feature4">All core security features</li>
-                        </ul>
-                        <div class="price-main" data-i18n="shared-price">$2.99 <span style="font-size: 0.5em;">USD/month</span></div>
-                        <div class="price-secondary" data-i18n="shared-price-yearly">or $29.99 USD/year</div>
-                        <a href="./pricing.html" target="_blank" rel="noopener noreferrer" class="button" data-i18n="shared-cta">Choose Shared Plan</a>
+                <div style="text-align: center; padding: 40px 20px; background: #f8f9fa; border-radius: 16px; max-width: 700px; margin: 0 auto;">
+                    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 30px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.5em;">🌐</div>
+                            <div style="font-weight: bold; font-size: 1.1em; margin: 8px 0 4px;">Shared Nodes</div>
+                            <div style="color: #0056b3; font-size: 1.4em; font-weight: bold;">from $2.99<small style="font-size:0.55em;">/mo</small></div>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 2.5em;">⚡</div>
+                            <div style="font-weight: bold; font-size: 1.1em; margin: 8px 0 4px;">Dedicated Line</div>
+                            <div style="color: #0056b3; font-size: 1.4em; font-weight: bold;">from $9.99<small style="font-size:0.55em;">/mo</small></div>
+                        </div>
                     </div>
-                    <div class="price-card recommended">
-                        <div class="recommended-badge" data-i18n="dedicated-badge">Professional Recommended</div>
-                        <h3 data-i18n="dedicated-title">Dedicated Line</h3>
-                        <p class="description" data-i18n="dedicated-desc">Your personal VPN tunnel providing unmatched performance, stability, and fixed IP address.</p>
-                        <ul>
-                            <li data-i18n="dedicated-feature1"><strong>Your exclusive VPN tunnel</strong></li>
-                            <li data-i18n="dedicated-feature2"><strong>Fixed dedicated IP address</strong></li>
-                            <li data-i18n="dedicated-feature3">Avoid IP blocking from others' actions</li>
-                            <li data-i18n="dedicated-feature4">Best choice for remote work and access control systems</li>
-                            <li data-i18n="dedicated-feature5">Highest stability and performance</li>
-                        </ul>
-                        <div class="price-main" data-i18n="dedicated-price">$9.99 <span style="font-size: 0.5em;">USD/month</span></div>
-                        <div class="price-secondary" data-i18n="dedicated-price-yearly">or $99.99 USD/year</div>
-                        <a href="./pricing.html" target="_blank" rel="noopener noreferrer" class="button" data-i18n="dedicated-cta">Upgrade to Dedicated Line</a>
-                    </div>
+                    <p style="color: #555; margin: 0 0 24px;">7-day free trial on every plan. 30-day money-back guarantee. No commitment.</p>
+                    <a href="./pricing.html" class="button" style="font-size: 1.1em; padding: 16px 40px;">View Plans &amp; Start Free Trial</a>
                 </div>
             </section>
         </div>
@@ -255,6 +236,6 @@
         }
       })(document,"script");
     </script>
-    <script src="./language.js"></script>
+
 </body>
 </html>
