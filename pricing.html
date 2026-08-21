@@ -499,11 +499,22 @@
             fetch(gasUrl,{method:'GET',mode:'no-cors',keepalive:true}).catch(e=>console.warn('Sheets failed:',e));
         } catch(e){ console.warn('Sheets error:',e); }
 
+        // Map plan and billing to product IDs
+        const productMap = {
+            'shared_monthly': 'PROD_4FqTbOFpuQjCkx9Sg5nUqC',     // $2.99/mo
+            'shared_yearly': 'PROD_1NSqd3AXHe9un744WmpPSr',      // $29.99/yr
+            'dedicated_monthly': 'PROD_2qWhSvNdwFiJwlrkIZfuFW',  // $9.99/mo
+            'dedicated_yearly': 'PROD_5IhLgwPLBzXaeUdvMR9jyM'    // $99.99/yr
+        };
+        
+        const key = state.plan + '_' + state.billing;
+        const productId = productMap[key];
+        
         setTimeout(() => {
-            window.location.href = 'https://snaagkster.gumroad.com/l/order'
-                + '?wanted=true'
+            window.location.href = 'https://pancake.waffo.ai/store/getwireguard-com-6f2horuw/product/' + productId
+                + '?type=subscription&currency=USD'
                 + '&email=' + encodeURIComponent(email)
-                + '&' + encodeURIComponent('Full name') + '=' + encodeURIComponent(name);
+                + '&name=' + encodeURIComponent(name);
         }, 1500);
     }
 </script>
