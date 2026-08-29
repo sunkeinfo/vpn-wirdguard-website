@@ -259,7 +259,7 @@
                 </ul>
             </div>
             <div class="col-lg-3 col-md-4 col-12 mt-4 mt-lg-0 ms-auto">
-                <p class="copyright-text mt-3">Copyright © 2025 GetWireGuard.com<br>All rights reserved.</p>
+                <p class="copyright-text mt-3">Copyright © 2026 GetWireGuard.com<br>All rights reserved.</p>
             </div>
         </div>
     </div>
@@ -387,8 +387,8 @@
                 })
             })
             .then(function(r) { return r.json(); })
-            .then(function(d) { console.log('Notification sent:', d); })
-            .catch(function(e) { console.warn('Notification failed:', e); });
+            .then(function(d) { /* Notification sent */ })
+            .catch(function(e) { /* Notification failed */ });
 
             // ── 功能3：提交数据到 Google Sheets（独立，fire-and-forget，成功失败不影响支付弹窗）──
             // 使用快照变量，确保闭包内值正确；GET 请求 + URL 参数，完全避免 CORS preflight 问题
@@ -400,10 +400,9 @@
                     + '&location=' + encodeURIComponent(_node)
                     + '&billing='  + encodeURIComponent(_billing)
                     + '&price='    + encodeURIComponent(_price);
-                console.log('GAS URL:', gasUrl);
                 fetch(gasUrl, { method: 'GET', mode: 'no-cors', keepalive: true })
-                .then(function() { console.log('Google Sheets submitted.'); })
-                .catch(function(e) { console.warn('Google Sheets failed:', e); });
+                .then(function() { /* Google Sheets submitted */ })
+                .catch(function(e) { /* Google Sheets failed */ });
             } catch(e) {
                 console.warn('Google Sheets error:', e);
             }

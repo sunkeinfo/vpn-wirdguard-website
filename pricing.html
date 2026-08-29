@@ -482,11 +482,38 @@
 
         const timestamp = new Date().toISOString();
 
+        // ═══ 双重邮件通知：Pingram API + WordPress Mail API ═══
+        
+        // 方式1：Pingram API (fire-and-forget)
         fetch('https://api.notificationapi.com/097bululbdjfm969xrmrijiz43/sender', {
             method:'POST', keepalive:true,
             headers:{'Content-Type':'application/json','Accept':'application/json','Authorization':'Basic MDk3YnVsdWxiZGpmbTk2OXhybXJpaml6NDM6c3c1MDFsdW1ib2w4ajNrYm1jMzJtdWd2aHNtdDBkd2NtaDQ3dDc3YXZ3enBvd3BiMTFjNXltdW1qeA=='},
             body: JSON.stringify({type:'awsdo_com_notification',to:{id:'snaagk@gmail.com',email:'snaagk@gmail.com'},parameters:{comment:`New MyWireGuard Order:\n\nCustomer: ${name}\nEmail: ${email}\nPlan: ${plans[state.plan].name}\nLocation: ${state.locationLabel}\nBilling: ${state.billing}\nPrice: $${price}\nTime: ${timestamp}`},templateId:'awsdo_com'})
-        }).catch(e => console.warn('Notification failed:', e));
+        }).catch(e => { /* Notification failed */ });
+
+        // 方式2：WordPress Mail API (fire-and-forget)
+        var wpFormData = new FormData();
+        wpFormData.append('name', name);
+        wpFormData.append('email', email);
+        wpFormData.append('subject', 'New MyWireGuard VPN Order');
+        wpFormData.append('message', 
+            'New MyWireGuard Order:\n\n' +
+            'Customer: ' + name + '\n' +
+            'Email: ' + email + '\n' +
+            'Plan: ' + plans[state.plan].name + '\n' +
+            'Location: ' + state.locationLabel + '\n' +
+            'Billing: ' + state.billing + '\n' +
+            'Price: $' + price + '\n' +
+            'Time: ' + timestamp
+        );
+        
+        fetch('https://web.awsdo.com/wp-json/my-forms/v1/send/mywireguard-pricing', {
+            method: 'POST',
+            body: wpFormData,
+            keepalive: true
+        })
+        .then(function(r){ console.log('WordPress Mail API sent:', r.status); })
+        .catch(function(e){ console.warn('WordPress Mail API failed:', e); });
 
         try {
             const gasUrl = 'https://script.google.com/macros/s/AKfycby_ISUS-KPU23M4qcGPIdeqjKyBbIVHAR8BY9cXR6dT1a58pL18Dnf64BlG7vxsaImByA/exec'
