@@ -27,53 +27,38 @@
       gtag('js', new Date());
       gtag('config', 'G-61Y0GT23PH');
     </script>
-     <style>
-        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #f8f9fa; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-        header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { max-height: 40px; }
-        nav { display: flex; align-items: center; gap: 15px; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
-        nav li { margin: 0; }
-        nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; padding: 8px 12px; border-radius: 4px; font-size: 14px; }
-        nav a:hover { color: #007bff; }
-        .nav-trial-btn { display: inline-block; background: #e44d26; color: white !important; padding: 8px 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; transition: all 0.3s ease; white-space: nowrap; }
-        .nav-trial-btn:hover { background: #c73d1a; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(228,77,38,0.4); }
-        
-        @media (min-width: 768px) {
-            nav { gap: 30px; }
-            nav ul { gap: 0; }
-            nav li { margin-left: 30px; }
-            nav a { padding: 0; font-size: 16px; }
-        }
-        h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 20px; color: #0056b3; }
-        .intro-text { text-align: center; font-size: 1.1em; color: #555; max-width: 700px; margin: 0 auto 50px auto; }
-        
-        .faq-section { margin-bottom: 40px; }
-        .faq-section h3 { font-size: 1.8em; color: #0056b3; border-bottom: 2px solid #007bff; padding-bottom: 10px; margin-bottom: 20px; }
-        .faq-item { background: #fff; border: 1px solid #e9ecef; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
-        .faq-question { font-weight: bold; font-size: 1.2em; padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .faq-question::after { content: '＋'; font-size: 1.5em; color: #007bff; transition: transform 0.3s ease; }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.5s ease; padding: 0 20px; }
-        .faq-answer p, .faq-answer ul, .faq-answer ol { margin-top: 0; }
-        .faq-item.active .faq-answer { max-height: 500px; /* A large enough value */ padding: 0 20px 20px 20px; }
-        .faq-item.active .faq-question::after { transform: rotate(45deg); }
-
-        .support-cta { background: #fff; padding: 30px; border-radius: 8px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .button { display: inline-block; background: #007bff; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease; }
-        .button:hover { background-color: #0056b3; }
-        footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
+    <!-- Fonts & Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/theme.css">
+    <style>
+        .support-wrap { max-width: 900px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="max-width: 1100px;">
-            <a href="./index.html" class="logo">
+    <!-- Top bar -->
+    <div class="top-bar">
+        <div class="top-bar__inner">
+            <div class="top-bar__left">
+                <span class="top-bar__item">📧 <a href="mailto:support@mywireguard.com">support@mywireguard.com</a></span>
+                <span class="top-bar__item">🛡️ 30-Day Money-Back Guarantee</span>
+            </div>
+            <div class="top-bar__right">
+                <span class="top-bar__item">🔒 Powered by WireGuard® Protocol</span>
+                <span class="top-bar__item">🌍 30+ Global Locations</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="./index.html" class="site-logo">
                 <img src="./logo.png" alt="MyWireGuard Logo">
             </a>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
                     <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
@@ -81,131 +66,162 @@
                     <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
                     <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
                 </ul>
-                <a href="./pricing.html" class="nav-trial-btn">Start Free Trial</a>
             </nav>
+            <div class="header-actions">
+                <a href="./pricing.html" class="nav-cta" data-i18n="nav-trial">Start Free Trial</a>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <h2 data-i18n="support-page-title">Customer Support & FAQ</h2>
-        <p class="intro-text" data-i18n="support-intro">Having trouble? Don't worry, we're here to help. Most common issues can be resolved with the solutions below. If the problem persists, our customer service team is always ready to assist you.</p>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-hero">
+        <h1 data-i18n="support-page-title">Customer Support & FAQ</h1>
+        <div class="breadcrumb-hero__crumbs"><a href="./index.html" data-i18n="nav-home">Home</a><span>/</span><span data-i18n="nav-support">Support</span></div>
+    </section>
 
-        <section class="faq-section">
-            <h3 data-i18n="general-title">General</h3>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="what-is-wireguard-question">What is WireGuard?</div>
-                <div class="faq-answer">
-                    <p data-i18n="what-is-wireguard-answer">WireGuard® is a modern, open-source VPN protocol built directly into the Linux kernel. Compared to older protocols like OpenVPN or IPsec, it uses far less code (around 4,000 lines), which means a smaller attack surface, easier security auditing, and noticeably faster connection speeds and battery life. MyWireGuard uses this protocol to encrypt all of your traffic and route it through our global server network.</p>
-                </div>
-            </div>
-        </section>
+    <main class="section">
+        <div class="container support-wrap">
+            <p class="intro-text" data-i18n="support-intro">Having trouble? Don't worry, we're here to help. Most common issues can be resolved with the solutions below. If the problem persists, our customer service team is always ready to assist you.</p>
 
-        <section class="faq-section">
-            <h3 data-i18n="account-plans-title">Account & Plans</h3>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="trial-work-question">How does the 7-day free trial work?</div>
-                <div class="faq-answer">
-                    <p data-i18n="trial-work-answer-intro">Every plan — Shared Nodes and Dedicated Line — includes a full-featured 7-day free trial. Here's how it works:</p>
-                    <ul>
-                        <li data-i18n="trial-work-step1">Sign up and choose your plan, server location, and billing cycle.</li>
-                        <li data-i18n="trial-work-step2">Your payment method is verified, but you are charged $0.00 today.</li>
-                        <li data-i18n="trial-work-step3">You get instant access to your configuration file and can start using the service right away.</li>
-                        <li data-i18n="trial-work-step4">If you don't cancel, your subscription automatically converts to a paid plan at the end of the 7 days, billed at the price shown for your chosen plan and billing cycle.</li>
-                        <li data-i18n="trial-work-step5">You can cancel anytime during the trial and you won't be charged at all.</li>
-                    </ul>
+            <section class="faq-section">
+                <h3 data-i18n="general-title">General</h3>
+                <div class="faq-item">
+                    <div class="faq-question" data-i18n="what-is-wireguard-question">What is WireGuard?</div>
+                    <div class="faq-answer">
+                        <p data-i18n="what-is-wireguard-answer">WireGuard® is a modern, open-source VPN protocol built directly into the Linux kernel. Compared to older protocols like OpenVPN or IPsec, it uses far less code (around 4,000 lines), which means a smaller attack surface, easier security auditing, and noticeably faster connection speeds and battery life. MyWireGuard uses this protocol to encrypt all of your traffic and route it through our global server network.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="shared-vs-dedicated-question">What is the difference between Shared and Dedicated?</div>
-                <div class="faq-answer">
-                    <p data-i18n="shared-vs-dedicated-answer-intro">These are our two core plans to meet different user needs:</p>
-                    <ul>
-                        <li data-i18n="shared-vs-dedicated-shared"><strong>Shared Nodes:</strong> You will share server resources and IP addresses with other users. This is the most cost-effective choice, perfect for daily anonymous browsing, securing public WiFi, and accessing general websites.</li>
-                        <li data-i18n="shared-vs-dedicated-dedicated"><strong>Dedicated Lines:</strong> You will get a VPN tunnel completely reserved for you personally and a **fixed dedicated IP address**. This means:
-                            <ul>
-                                <li data-i18n="shared-vs-dedicated-stable"><strong>More stable performance:</strong> Bandwidth is exclusively for you, unaffected by others' activities.</li>
-                                <li data-i18n="shared-vs-dedicated-clean"><strong>Higher IP purity:</strong> Eliminates the risk of shared IP being restricted or blocked by certain websites (like online banking).</li>
-                                <li data-i18n="shared-vs-dedicated-professional"><strong>Professional use preferred:</strong> Perfect for users who need fixed IP for remote work, accessing company internal systems, or conducting secure online transactions.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-             <div class="faq-item">
-                <div class="faq-question" data-i18n="multi-device-question">How many devices can I use simultaneously?</div>
-                <div class="faq-answer">
-                    <p data-i18n="multi-device-answer1">You can install the same configuration file on all your devices (computer, phone, tablet).</p>
-                    <p data-i18n="multi-device-answer2">But for optimal connection stability and performance, we recommend **using the same configuration file on only one device at a time**.</p>
-                </div>
-            </div>
-             <div class="faq-item">
-                <div class="faq-question" data-i18n="no-logs-question">Do you keep logs of my activity?</div>
-                <div class="faq-answer">
-                    <p data-i18n="no-logs-answer"><strong>We strictly adhere to a no-logs policy.</strong> We never record, monitor, or store any of your network traffic, browsing history, DNS queries, or IP addresses. Your online activities are completely yours, and we are committed to protecting your absolute privacy.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="receive-config-question">How do I receive my configuration file?</div>
-                <div class="faq-answer">
-                    <p data-i18n="receive-config-answer">After you complete checkout, we automatically generate a personal .conf configuration file for your selected plan and server location, and email it to the address you provided — usually within a few minutes. Just download the attached file and import it into the official WireGuard client (or TunnlTo) to connect. See our Tutorials page for step-by-step import instructions.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="change-location-question">Can I change my server location?</div>
-                <div class="faq-answer">
-                    <p data-i18n="change-location-answer">Yes. On the Shared Nodes plan, you can download a new .conf file for any other location from your customer center at any time. On a Dedicated Line, since your dedicated IP is tied to a specific physical location, changing regions requires provisioning a new IP — please contact our support team and we'll set up the new location for you, usually within a few hours.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="cancel-subscription-question">How do I cancel my subscription?</div>
-                <div class="faq-answer">
-                    <p data-i18n="cancel-subscription-answer">You can cancel anytime, with no cancellation fees. Just email support@mywireguard.com from your registered email address and we'll cancel your subscription for you — you'll keep access until the end of your current billing period. If you cancel during the 7-day free trial, you won't be charged at all.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="refund-faq-question">What is your refund policy?</div>
-                <div class="faq-answer">
-                    <p><span data-i18n="refund-faq-answer">We offer a 30-day money-back guarantee on all plans. If you're not satisfied for any reason within 30 days of your first payment, email support@mywireguard.com with "Refund Request" in the subject line and we'll process a full refund, typically within 48 hours.</span> <a href="./refund.html" data-i18n="refund-faq-link">See our Refund Policy page for full details.</a></p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question" data-i18n="payment-methods-question">Which payment methods do you accept?</div>
-                <div class="faq-answer">
-                    <p data-i18n="payment-methods-answer">We process all payments securely through Gumroad, our payment partner. Gumroad accepts all major credit and debit cards (Visa, Mastercard, American Express, Discover) as well as PayPal in supported regions. No payment information is ever stored on our own servers.</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <div class="support-cta">
-            <h3 data-i18n="support-cta-title">Still need help?</h3>
-            <p data-i18n="support-cta-desc">If the above answers don't resolve your issue, please don't hesitate!<br>Our customer service team is always ready to provide one-on-one support.</p>
-            <a href="./contact.html" class="button" data-i18n="support-cta-button">Contact Our Support Team</a>
+            <section class="faq-section">
+                <h3 data-i18n="account-plans-title">Account & Plans</h3>
+                <div class="faq-item">
+                    <div class="faq-question" data-i18n="trial-work-question">How does the 7-day free trial work?</div>
+                    <div class="faq-answer">
+                        <p data-i18n="trial-work-answer-intro">Every plan — Shared Nodes and Dedicated Line — includes a full-featured 7-day free trial. Here's how it works:</p>
+                        <ul>
+                            <li data-i18n="trial-work-step1">Sign up and choose your plan, server location, and billing cycle.</li>
+                            <li data-i18n="trial-work-step2">Your payment method is verified, but you are charged $0.00 today.</li>
+                            <li data-i18n="trial-work-step3">You get instant access to your configuration file and can start using the service right away.</li>
+                            <li data-i18n="trial-work-step4">If you don't cancel, your subscription automatically converts to a paid plan at the end of the 7 days, billed at the price shown for your chosen plan and billing cycle.</li>
+                            <li data-i18n="trial-work-step5">You can cancel anytime during the trial and you won't be charged at all.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" data-i18n="shared-vs-dedicated-question">What is the difference between Shared and Dedicated?</div>
+                    <div class="faq-answer">
+                        <p data-i18n="shared-vs-dedicated-answer-intro">These are our two core plans to meet different user needs:</p>
+                        <ul>
+                            <li data-i18n="shared-vs-dedicated-shared"><strong>Shared Nodes:</strong> You will share server resources and IP addresses with other users. This is the most cost-effective choice, perfect for daily anonymous browsing, securing public WiFi, and accessing general websites.</li>
+                            <li data-i18n="shared-vs-dedicated-dedicated"><strong>Dedicated Lines:</strong> You will get a VPN tunnel completely reserved for you personally and a **fixed dedicated IP address**. This means:
+                                <ul>
+                                    <li data-i18n="shared-vs-dedicated-stable"><strong>More stable performance:</strong> Bandwidth is exclusively for you, unaffected by others' activities.</li>
+                                    <li data-i18n="shared-vs-dedicated-clean"><strong>Higher IP purity:</strong> Eliminates the risk of shared IP being restricted or blocked by certain websites (like online banking).</li>
+                                    <li data-i18n="shared-vs-dedicated-professional"><strong>Professional use preferred:</strong> Perfect for users who need fixed IP for remote work, accessing company internal systems, or conducting secure online transactions.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question" data-i18n="multi-device-question">How many devices can I use simultaneously?</div>
+                    <div class="faq-answer">
+                        <p data-i18n="multi-device-answer1">You can install the same configuration file on all your devices (computer, phone, tablet).</p>
+                        <p data-i18n="multi-device-answer2">But for optimal connection stability and performance, we recommend **using the same configuration file on only one device at a time**.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question" data-i18n="no-logs-question">Do you keep logs of my activity?</div>
+                    <div class="faq-answer">
+                        <p data-i18n="no-logs-answer"><strong>We strictly adhere to a no-logs policy.</strong> We never record, monitor, or store any of your network traffic, browsing history, DNS queries, or IP addresses. Your online activities are completely yours, and we are committed to protecting your absolute privacy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" data-i18n="receive-config-question">How do I receive my configuration file?</div>
+                    <div class="faq-answer">
+                        <p data-i18n="receive-config-answer">After you complete checkout, we automatically generate a personal .conf configuration file for your selected plan and server location, and email it to the address you provided — usually within a few minutes. Just download the attached file and import it into the official WireGuard client (or TunnlTo) to connect. See our Tutorials page for step-by-step import instructions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" data-i18n="change-location-question">Can I change my server location?</div>
+                    <div class="faq-answer">
+                        <p data-i18n="change-location-answer">Yes. On the Shared Nodes plan, you can download a new .conf file for any other location from your customer center at any time. On a Dedicated Line, since your dedicated IP is tied to a specific physical location, changing regions requires provisioning a new IP — please contact our support team and we'll set up the new location for you, usually within a few hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" data-i18n="cancel-subscription-question">How do I cancel my subscription?</div>
+                    <div class="faq-answer">
+                        <p data-i18n="cancel-subscription-answer">You can cancel anytime, with no cancellation fees. Just email support@mywireguard.com from your registered email address and we'll cancel your subscription for you — you'll keep access until the end of your current billing period. If you cancel during the 7-day free trial, you won't be charged at all.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" data-i18n="refund-faq-question">What is your refund policy?</div>
+                    <div class="faq-answer">
+                        <p><span data-i18n="refund-faq-answer">We offer a 30-day money-back guarantee on all plans. If you're not satisfied for any reason within 30 days of your first payment, email support@mywireguard.com with "Refund Request" in the subject line and we'll process a full refund, typically within 48 hours.</span> <a href="./refund.html" data-i18n="refund-faq-link">See our Refund Policy page for full details.</a></p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" data-i18n="payment-methods-question">Which payment methods do you accept?</div>
+                    <div class="faq-answer">
+                        <p data-i18n="payment-methods-answer">We process all payments securely through Gumroad, our payment partner. Gumroad accepts all major credit and debit cards (Visa, Mastercard, American Express, Discover) as well as PayPal in supported regions. No payment information is ever stored on our own servers.</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="support-cta card">
+                <h3 data-i18n="support-cta-title">Still need help?</h3>
+                <p data-i18n="support-cta-desc">If the above answers don't resolve your issue, please don't hesitate!<br>Our customer service team is always ready to provide one-on-one support.</p>
+                <a href="./contact.html" class="button" data-i18n="support-cta-button">Contact Our Support Team</a>
+            </div>
         </div>
     </main>
 
-    <footer>
-        <div class="container" style="max-width: 1100px;">
-            <p data-i18n="footer-copyright">Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
-            <p>
-                <a href="./contact.html" data-i18n="footer-contact">Contact</a> |
-                <a href="./refund.html" data-i18n="footer-refund">Refund Policy</a> |
-                <a href="./terms.html" data-i18n="footer-terms">Terms of Service</a>
-            </p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__grid">
+                <div class="site-footer__about">
+                    <img src="./logo.png" alt="MyWireGuard Logo">
+                    <p data-i18n="footer-about">Fast, secure WireGuard® VPN with shared nodes and dedicated lines. Global servers across 30+ locations, backed by a strict no-logs policy.</p>
+                    <div class="contact-line">📧 <a href="mailto:support@mywireguard.com">support@mywireguard.com</a></div>
+                </div>
+                <div class="site-footer__links">
+                    <h6 data-i18n="footer-quicklinks">Quick Links</h6>
+                    <ul>
+                        <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
+                        <li><a href="./downloads.html" data-i18n="nav-downloads">Downloads</a></li>
+                        <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
+                        <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer__links">
+                    <h6 data-i18n="footer-company">Company</h6>
+                    <ul>
+                        <li><a href="./contact.html" data-i18n="footer-contact">Contact</a></li>
+                        <li><a href="./refund.html" data-i18n="footer-refund">Refund Policy</a></li>
+                        <li><a href="./terms.html" data-i18n="footer-terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-footer__copyright">
+                <p data-i18n="footer-copyright">Copyright © 2026 MyWireGuard.com. All Rights Reserved.</p>
+                <span class="trademark">"WireGuard" is a registered trademark of Jason A. Donenfeld. MyWireGuard is an independent service and is not affiliated with the WireGuard project.</span>
+            </div>
         </div>
     </footer>
 
-    <!-- 可交互 FAQ 的 JavaScript -->
+    <!-- Interactive FAQ -->
     <script>
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', event => {
                 const parent = item.parentElement;
-                // Close other active items
                 document.querySelectorAll('.faq-item').forEach(el => {
                     if (el !== parent && el.classList.contains('active')) {
                         el.classList.remove('active');
                     }
                 });
-                // Toggle current item
                 parent.classList.toggle('active');
             });
         });
@@ -228,5 +244,6 @@
       })(document,"script");
     </script>
 
+    <script src="./assets/theme.js"></script>
 </body>
 </html>

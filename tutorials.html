@@ -27,57 +27,39 @@
       gtag('js', new Date());
       gtag('config', 'G-61Y0GT23PH');
     </script>
-     <style>
-        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #fdfdfd; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-        header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { max-height: 40px; }
-        nav { display: flex; align-items: center; gap: 15px; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
-        nav li { margin: 0; }
-        nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; padding: 8px 12px; border-radius: 4px; font-size: 14px; }
-        nav a:hover { color: #007bff; }
-        .nav-trial-btn { display: inline-block; background: #e44d26; color: white !important; padding: 8px 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; transition: all 0.3s ease; white-space: nowrap; }
-        .nav-trial-btn:hover { background: #c73d1a; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(228,77,38,0.4); }
-        
-        @media (min-width: 768px) {
-            nav { gap: 30px; }
-            nav ul { gap: 0; }
-            nav li { margin-left: 30px; }
-            nav a { padding: 0; font-size: 16px; }
-        }
-        h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 40px; color: #0056b3; }
-        .tutorial-section { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-bottom: 30px; }
-        .tutorial-section h3 { font-size: 1.8em; margin-top: 0; color: #0056b3; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .tutorial-section h4 { font-size: 1.3em; color: #333; margin-top: 25px; }
-        .highlight { background-color: #e9f7ff; border-left: 4px solid #007bff; padding: 15px; margin: 20px 0; border-radius: 4px; }
-        .button { display: inline-block; background: #007bff; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 10px;}
-        .button:hover { background-color: #0056b3; }
-        code { background: #e9ecef; padding: 2px 6px; border-radius: 4px; font-family: Consolas, monaco, monospace; color: #333; }
-        pre { background: #212529; color: #fff; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
-        
-        /* 新增：步驟卡片樣式 */
-        .steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        .step-card { background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 25px; border-radius: 8px; text-align: center; }
-        .step-icon { font-size: 4em; margin-bottom: 15px; }
-        .step-card h4 { margin: 0 0 10px 0; font-size: 1.2em; color: #0056b3; }
-        .step-card p { font-size: 0.95em; margin: 0; }
-
-        footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
-        footer p { margin: 10px 0; }
-        footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
-        footer a:hover { text-decoration: underline; }
+    <!-- Fonts & Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/theme.css">
+    <style>
+        /* Page-specific: constrain tutorial reading width */
+        .tutorials-wrap { max-width: 900px; }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="container" style="max-width: 1100px;">
-            <a href="./index.html" class="logo">
+    <!-- Top bar -->
+    <div class="top-bar">
+        <div class="top-bar__inner">
+            <div class="top-bar__left">
+                <span class="top-bar__item">📧 <a href="mailto:support@mywireguard.com">support@mywireguard.com</a></span>
+                <span class="top-bar__item">🛡️ 30-Day Money-Back Guarantee</span>
+            </div>
+            <div class="top-bar__right">
+                <span class="top-bar__item">🔒 Powered by WireGuard® Protocol</span>
+                <span class="top-bar__item">🌍 30+ Global Locations</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="./index.html" class="site-logo">
                 <img src="./logo.png" alt="MyWireGuard Logo">
             </a>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
                     <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
@@ -85,91 +67,123 @@
                     <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
                     <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
                 </ul>
-                <a href="./pricing.html" class="nav-trial-btn">Start Free Trial</a>
             </nav>
+            <div class="header-actions">
+                <a href="./pricing.html" class="nav-cta" data-i18n="nav-trial">Start Free Trial</a>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <h2 data-i18n="tutorials-page-title">MyWireGuard Setup Guide</h2>
-        
-        <section class="tutorial-section">
-            <h3 data-i18n="basic-setup-title">Basic Setup (Using Official Client)</h3>
-            <p data-i18n="basic-setup-desc">This method is suitable for standard users who want all network traffic to go through VPN. Simple and straightforward operation.</p>
-            <div class="steps-container">
-                <div class="step-card">
-                    <div class="step-icon">📄</div>
-                    <h4 data-i18n="step1-title">Step 1: Get Configuration File</h4>
-                    <p data-i18n="step1-desc">Download the <code>.conf</code> configuration file for your desired node from your customer center.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">📥</div>
-                    <h4 data-i18n="step2-title">Step 2: Import Configuration File</h4>
-                    <p data-i18n="step2-desc">Open the official client, select "Import tunnel(s) from file..." and choose your configuration file.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">🟢</div>
-                    <h4 data-i18n="step3-title">Step 3: Connect</h4>
-                    <p data-i18n="step3-desc">Click the switch next to the connection to enable it and enjoy secure, private web browsing!</p>
-                </div>
-            </div>
-        </section>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-hero">
+        <h1 data-i18n="tutorials-page-title">MyWireGuard Setup Guide</h1>
+        <div class="breadcrumb-hero__crumbs"><a href="./index.html" data-i18n="nav-home">Home</a><span>/</span><span data-i18n="nav-tutorials">Tutorials</span></div>
+    </section>
 
-        <section class="tutorial-section">
-            <h3 data-i18n="advanced-setup-title">Advanced Recommendation: Use TunnlTo for App Splitting (More Powerful)</h3>
-            <div class="highlight">
-                <p data-i18n="advanced-scenario"><strong>Recommended Scenario:</strong> Do you want to use local network for online gaming to get the lowest latency, while letting your browser go through VPN for security? TunnlTo is exactly the powerful tool you need!</p>
-            </div>
-            
-            <h4 data-i18n="tunnlto-what-title">What is TunnlTo? Why do we recommend it?</h4>
-            <p data-i18n="tunnlto-what-desc">TunnlTo is a third-party client based on WireGuard. Its core advantage is providing **"App Splitting"** functionality. This means you can precisely control **which application's** traffic goes through the VPN tunnel and which goes through your local regular network.</p>
+    <main class="section">
+        <div class="container tutorials-wrap">
+            <section class="tutorial-section">
+                <h3 data-i18n="basic-setup-title">Basic Setup (Using Official Client)</h3>
+                <p data-i18n="basic-setup-desc">This method is suitable for standard users who want all network traffic to go through VPN. Simple and straightforward operation.</p>
+                <div class="steps-container">
+                    <div class="step-card">
+                        <div class="step-icon">📄</div>
+                        <h4 data-i18n="step1-title">Step 1: Get Configuration File</h4>
+                        <p data-i18n="step1-desc">Download the <code>.conf</code> configuration file for your desired node from your customer center.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">📥</div>
+                        <h4 data-i18n="step2-title">Step 2: Import Configuration File</h4>
+                        <p data-i18n="step2-desc">Open the official client, select "Import tunnel(s) from file..." and choose your configuration file.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">🟢</div>
+                        <h4 data-i18n="step3-title">Step 3: Connect</h4>
+                        <p data-i18n="step3-desc">Click the switch next to the connection to enable it and enjoy secure, private web browsing!</p>
+                    </div>
+                </div>
+            </section>
 
-            <div class="steps-container">
-                 <div class="step-card">
-                    <div class="step-icon">⬇️</div>
-                    <h4 data-i18n="tunnlto-step1-title">Step 1: Download TunnlTo</h4>
-                    <p data-i18n="tunnlto-step1-desc">TunnlTo is a free open-source software. Please download and install it from its official website.</p>
-                    <a href="https://www.tunnl.to/" target="_blank" rel="noopener noreferrer" class="button" data-i18n="tunnlto-website">Go to Official Website</a>
+            <section class="tutorial-section">
+                <h3 data-i18n="advanced-setup-title">Advanced Recommendation: Use TunnlTo for App Splitting (More Powerful)</h3>
+                <div class="highlight">
+                    <p data-i18n="advanced-scenario"><strong>Recommended Scenario:</strong> Do you want to use local network for online gaming to get the lowest latency, while letting your browser go through VPN for security? TunnlTo is exactly the powerful tool you need!</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-icon">➕</div>
-                    <h4 data-i18n="tunnlto-step2-title">Step 2: Import Configuration File</h4>
-                    <p data-i18n="tunnlto-step2-desc">Open TunnlTo, click "Import tunnel(s) from file", and select your MyWireGuard <code>.conf</code> file.</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">🔀</div>
-                    <h4 data-i18n="tunnlto-step3-title">Step 3: Configure Splitting</h4>
-                    <p data-i18n="tunnlto-step3-desc">Click connection settings, go to "App Routing" page, and select the applications you want to go through VPN (like Chrome).</p>
-                </div>
-                <div class="step-card">
-                    <div class="step-icon">✅</div>
-                    <h4 data-i18n="tunnlto-step4-title">Step 4: Connect and Enjoy</h4>
-                    <p data-i18n="tunnlto-step4-desc">Enable the connection! Now only your selected apps will go through VPN, while other programs remain unaffected, achieving perfect splitting.</p>
-                </div>
-            </div>
-        </section>
 
-         <section class="tutorial-section">
-            <h3 data-i18n="linux-setup-title">(Server/Expert) Linux Installation & Configuration</h3>
-            <p data-i18n="linux-setup-desc">For Debian/Ubuntu systems, you can use the following commands to install:</p>
-            <pre><code>sudo apt update
+                <h4 data-i18n="tunnlto-what-title">What is TunnlTo? Why do we recommend it?</h4>
+                <p data-i18n="tunnlto-what-desc">TunnlTo is a third-party client based on WireGuard. Its core advantage is providing **"App Splitting"** functionality. This means you can precisely control **which application's** traffic goes through the VPN tunnel and which goes through your local regular network.</p>
+
+                <div class="steps-container">
+                     <div class="step-card">
+                        <div class="step-icon">⬇️</div>
+                        <h4 data-i18n="tunnlto-step1-title">Step 1: Download TunnlTo</h4>
+                        <p data-i18n="tunnlto-step1-desc">TunnlTo is a free open-source software. Please download and install it from its official website.</p>
+                        <a href="https://www.tunnl.to/" target="_blank" rel="noopener noreferrer" class="button" data-i18n="tunnlto-website">Go to Official Website</a>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">➕</div>
+                        <h4 data-i18n="tunnlto-step2-title">Step 2: Import Configuration File</h4>
+                        <p data-i18n="tunnlto-step2-desc">Open TunnlTo, click "Import tunnel(s) from file", and select your MyWireGuard <code>.conf</code> file.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">🔀</div>
+                        <h4 data-i18n="tunnlto-step3-title">Step 3: Configure Splitting</h4>
+                        <p data-i18n="tunnlto-step3-desc">Click connection settings, go to "App Routing" page, and select the applications you want to go through VPN (like Chrome).</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-icon">✅</div>
+                        <h4 data-i18n="tunnlto-step4-title">Step 4: Connect and Enjoy</h4>
+                        <p data-i18n="tunnlto-step4-desc">Enable the connection! Now only your selected apps will go through VPN, while other programs remain unaffected, achieving perfect splitting.</p>
+                    </div>
+                </div>
+            </section>
+
+             <section class="tutorial-section">
+                <h3 data-i18n="linux-setup-title">(Server/Expert) Linux Installation & Configuration</h3>
+                <p data-i18n="linux-setup-desc">For Debian/Ubuntu systems, you can use the following commands to install:</p>
+                <pre><code>sudo apt update
 sudo apt install wireguard -y</code></pre>
-            <p data-i18n="linux-copy-desc">After installation, copy your <code>.conf</code> configuration file to the <code>/etc/wireguard/</code> directory (for example, name it <code>mywg0.conf</code>).</p>
-            <p data-i18n="linux-start-desc">Use the following command to start the connection:</p>
-            <pre><code>sudo wg-quick up mywg0</code></pre>
-            <p data-i18n="linux-stop-desc">To disconnect, use:</p>
-            <pre><code>sudo wg-quick down mywg0</code></pre>
-        </section>
+                <p data-i18n="linux-copy-desc">After installation, copy your <code>.conf</code> configuration file to the <code>/etc/wireguard/</code> directory (for example, name it <code>mywg0.conf</code>).</p>
+                <p data-i18n="linux-start-desc">Use the following command to start the connection:</p>
+                <pre><code>sudo wg-quick up mywg0</code></pre>
+                <p data-i18n="linux-stop-desc">To disconnect, use:</p>
+                <pre><code>sudo wg-quick down mywg0</code></pre>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <div class="container" style="max-width: 1100px;">
-            <p data-i18n="footer-copyright">Copyright © 2025 MyWireGuard.com. All Rights Reserved.</p>
-            <p>
-                <a href="./contact.html" data-i18n="footer-contact">Contact</a> |
-                <a href="./refund.html" data-i18n="footer-refund">Refund Policy</a> |
-                <a href="./terms.html" data-i18n="footer-terms">Terms of Service</a>
-            </p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__grid">
+                <div class="site-footer__about">
+                    <img src="./logo.png" alt="MyWireGuard Logo">
+                    <p data-i18n="footer-about">Fast, secure WireGuard® VPN with shared nodes and dedicated lines. Global servers across 30+ locations, backed by a strict no-logs policy.</p>
+                    <div class="contact-line">📧 <a href="mailto:support@mywireguard.com">support@mywireguard.com</a></div>
+                </div>
+                <div class="site-footer__links">
+                    <h6 data-i18n="footer-quicklinks">Quick Links</h6>
+                    <ul>
+                        <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
+                        <li><a href="./downloads.html" data-i18n="nav-downloads">Downloads</a></li>
+                        <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
+                        <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer__links">
+                    <h6 data-i18n="footer-company">Company</h6>
+                    <ul>
+                        <li><a href="./contact.html" data-i18n="footer-contact">Contact</a></li>
+                        <li><a href="./refund.html" data-i18n="footer-refund">Refund Policy</a></li>
+                        <li><a href="./terms.html" data-i18n="footer-terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-footer__copyright">
+                <p data-i18n="footer-copyright">Copyright © 2026 MyWireGuard.com. All Rights Reserved.</p>
+                <span class="trademark">"WireGuard" is a registered trademark of Jason A. Donenfeld. MyWireGuard is an independent service and is not affiliated with the WireGuard project.</span>
+            </div>
         </div>
     </footer>
 
@@ -190,5 +204,6 @@ sudo apt install wireguard -y</code></pre>
       })(document,"script");
     </script>
 
+    <script src="./assets/theme.js"></script>
 </body>
 </html>

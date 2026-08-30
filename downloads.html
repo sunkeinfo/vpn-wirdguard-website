@@ -27,51 +27,35 @@
       gtag('js', new Date());
       gtag('config', 'G-61Y0GT23PH');
     </script>
-    <style>
-        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #fdfdfd; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { max-height: 40px; }
-        nav { display: flex; align-items: center; gap: 15px; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
-        nav li { margin: 0; }
-        nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; padding: 8px 12px; border-radius: 4px; font-size: 14px; }
-        nav a:hover { color: #007bff; }
-        .nav-trial-btn { display: inline-block; background: #e44d26; color: white !important; padding: 8px 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; transition: all 0.3s ease; white-space: nowrap; }
-        .nav-trial-btn:hover { background: #c73d1a; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(228,77,38,0.4); }
-        
-        h2 { text-align: center; margin-bottom: 40px; color: #333; }
-        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 40px; }
-        .download-card { background: white; border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-        .download-card:hover { transform: translateY(-5px); }
-        .download-card .icon { font-size: 4em; margin-bottom: 20px; }
-        .download-card h3 { margin: 0 0 15px 0; color: #333; }
-        .download-card p { color: #666; margin-bottom: 25px; }
-        .button { display: inline-block; background: #007bff; color: white; padding: 12px 25px; border-radius: 25px; text-decoration: none; font-weight: bold; transition: background 0.3s ease; }
-        .button:hover { background: #0056b3; }
-        
-        footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
-        footer p { margin: 10px 0; }
-        footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
-        footer a:hover { text-decoration: underline; }
-        
-        @media (min-width: 768px) {
-            nav { gap: 30px; }
-            nav ul { gap: 0; }
-            nav li { margin-left: 30px; }
-            nav a { padding: 0; font-size: 16px; }
-        }
-    </style>
+    <!-- Fonts & Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/theme.css">
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <a href="./index.html" class="logo">
+    <!-- Top bar -->
+    <div class="top-bar">
+        <div class="top-bar__inner">
+            <div class="top-bar__left">
+                <span class="top-bar__item">📧 <a href="mailto:support@mywireguard.com">support@mywireguard.com</a></span>
+                <span class="top-bar__item">🛡️ 30-Day Money-Back Guarantee</span>
+            </div>
+            <div class="top-bar__right">
+                <span class="top-bar__item">🔒 Powered by WireGuard® Protocol</span>
+                <span class="top-bar__item">🌍 30+ Global Locations</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="./index.html" class="site-logo">
                 <img src="./logo.png" alt="MyWireGuard Logo">
             </a>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
                     <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
@@ -79,58 +63,91 @@
                     <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
                     <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
                 </ul>
-                <a href="./pricing.html" class="nav-trial-btn">Start Free Trial</a>
             </nav>
+            <div class="header-actions">
+                <a href="./pricing.html" class="nav-cta" data-i18n="nav-trial">Start Free Trial</a>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            </div>
         </div>
     </header>
 
-    <main class="container">
-        <h2 data-i18n="downloads-page-title">Download WireGuard® Clients for All Your Devices</h2>
-        <div class="download-grid">
-            <div class="download-card">
-                <div class="icon">💻</div>
-                <h3>Windows</h3>
-                <p data-i18n="windows-desc">Supports Windows 10 & 11 (x64).</p>
-                <a href="https://download.wireguard.com/windows-client/wireguard-installer.exe" target="_blank" class="button" data-i18n="windows-download">Download .msi Installer</a>
-            </div>
-            <div class="download-card">
-                <div class="icon">🍎</div>
-                <h3>macOS</h3>
-                <p data-i18n="macos-desc">Available from Mac App Store.</p>
-                <a href="https://apps.apple.com/us/app/wireguard/id1451685025" target="_blank" class="button" data-i18n="macos-download">Go to App Store</a>
-            </div>
-             <div class="download-card">
-                <div class="icon">🐧</div>
-                <h3>Linux</h3>
-                <p data-i18n="linux-desc">Supports major distributions, see tutorials.</p>
-                <a href="./tutorials.html" class="button" data-i18n="linux-download">View Installation Commands</a>
-            </div>
-            <div class="download-card">
-                <div class="icon">📱</div>
-                <h3>iOS</h3>
-                <p data-i18n="ios-desc">For iPhone and iPad.</p>
-                <a href="https://apps.apple.com/us/app/wireguard/id1441195209" target="_blank" class="button" data-i18n="ios-download">Go to App Store</a>
-            </div>
-            <div class="download-card">
-                <div class="icon">🤖</div>
-                <h3>Android</h3>
-                <p data-i18n="android-desc">Available from Google Play.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.wireguard.android" target="_blank" class="button" data-i18n="android-download">Go to Google Play</a>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb-hero">
+        <h1 data-i18n="downloads-page-title">Download WireGuard® Clients for All Your Devices</h1>
+        <div class="breadcrumb-hero__crumbs"><a href="./index.html" data-i18n="nav-home">Home</a><span>/</span><span data-i18n="nav-downloads">Downloads</span></div>
+    </section>
+
+    <main class="section">
+        <div class="container">
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="icon">💻</div>
+                    <h3>Windows</h3>
+                    <p data-i18n="windows-desc">Supports Windows 10 & 11 (x64).</p>
+                    <a href="https://download.wireguard.com/windows-client/wireguard-installer.exe" target="_blank" class="button" data-i18n="windows-download">Download .msi Installer</a>
+                </div>
+                <div class="download-card">
+                    <div class="icon">🍎</div>
+                    <h3>macOS</h3>
+                    <p data-i18n="macos-desc">Available from Mac App Store.</p>
+                    <a href="https://apps.apple.com/us/app/wireguard/id1451685025" target="_blank" class="button" data-i18n="macos-download">Go to App Store</a>
+                </div>
+                 <div class="download-card">
+                    <div class="icon">🐧</div>
+                    <h3>Linux</h3>
+                    <p data-i18n="linux-desc">Supports major distributions, see tutorials.</p>
+                    <a href="./tutorials.html" class="button" data-i18n="linux-download">View Installation Commands</a>
+                </div>
+                <div class="download-card">
+                    <div class="icon">📱</div>
+                    <h3>iOS</h3>
+                    <p data-i18n="ios-desc">For iPhone and iPad.</p>
+                    <a href="https://apps.apple.com/us/app/wireguard/id1441195209" target="_blank" class="button" data-i18n="ios-download">Go to App Store</a>
+                </div>
+                <div class="download-card">
+                    <div class="icon">🤖</div>
+                    <h3>Android</h3>
+                    <p data-i18n="android-desc">Available from Google Play.</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.wireguard.android" target="_blank" class="button" data-i18n="android-download">Go to Google Play</a>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p data-i18n="footer-copyright">Copyright © 2026 MyWireGuard.com. All Rights Reserved.</p>
-            <p>
-                <a href="./contact.html" data-i18n="footer-contact">Contact</a> |
-                <a href="./refund.html" data-i18n="footer-refund">Refund Policy</a> |
-                <a href="./terms.html" data-i18n="footer-terms">Terms of Service</a>
-            </p>
+            <div class="site-footer__grid">
+                <div class="site-footer__about">
+                    <img src="./logo.png" alt="MyWireGuard Logo">
+                    <p data-i18n="footer-about">Fast, secure WireGuard® VPN with shared nodes and dedicated lines. Global servers across 30+ locations, backed by a strict no-logs policy.</p>
+                    <div class="contact-line">📧 <a href="mailto:support@mywireguard.com">support@mywireguard.com</a></div>
+                </div>
+                <div class="site-footer__links">
+                    <h6 data-i18n="footer-quicklinks">Quick Links</h6>
+                    <ul>
+                        <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
+                        <li><a href="./downloads.html" data-i18n="nav-downloads">Downloads</a></li>
+                        <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
+                        <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer__links">
+                    <h6 data-i18n="footer-company">Company</h6>
+                    <ul>
+                        <li><a href="./contact.html" data-i18n="footer-contact">Contact</a></li>
+                        <li><a href="./refund.html" data-i18n="footer-refund">Refund Policy</a></li>
+                        <li><a href="./terms.html" data-i18n="footer-terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-footer__copyright">
+                <p data-i18n="footer-copyright">Copyright © 2026 MyWireGuard.com. All Rights Reserved.</p>
+                <span class="trademark">"WireGuard" is a registered trademark of Jason A. Donenfeld. MyWireGuard is an independent service and is not affiliated with the WireGuard project.</span>
+            </div>
         </div>
     </footer>
-    
+
     <!-- Chatwoot SDK -->
     <script>
       (function(d,t) {
@@ -148,5 +165,6 @@
       })(document,"script");
     </script>
 
+    <script src="./assets/theme.js"></script>
 </body>
 </html>

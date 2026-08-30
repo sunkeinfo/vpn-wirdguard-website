@@ -58,80 +58,35 @@
       gtag('js', new Date());
       gtag('config', 'G-61Y0GT23PH');
     </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        body { font-family: '微軟正黑體', 'Microsoft JhengHei', sans-serif; line-height: 1.8; color: #333; margin: 0; background-color: #fdfdfd; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        header { background-color: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { max-height: 40px; }
-        nav { display: flex; align-items: center; gap: 15px; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
-        nav li { margin: 0; }
-        nav a { text-decoration: none; color: #333; font-weight: bold; transition: color 0.3s ease; padding: 8px 12px; border-radius: 4px; font-size: 14px; }
-        nav a:hover { color: #007bff; }
-        .nav-trial-btn { display: inline-block; background: #e44d26; color: white !important; padding: 8px 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 14px; transition: all 0.3s ease; white-space: nowrap; }
-        .nav-trial-btn:hover { background: #c73d1a; transform: translateY(-1px); box-shadow: 0 3px 10px rgba(228,77,38,0.4); }
-        
-        @media (min-width: 768px) {
-            nav { gap: 30px; }
-            nav ul { gap: 0; }
-            nav li { margin-left: 30px; }
-            nav a { padding: 0; font-size: 16px; }
-        }
-        .hero { background: linear-gradient(135deg, #007bff, #0056b3); color: white; text-align: center; padding: 100px 20px; }
-        .hero h1 { font-size: 3em; margin-bottom: 20px; }
-        .hero p { font-size: 1.2em; margin-bottom: 30px; }
-        .button { display: inline-block; background: #e44d26; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease; }
-        .button:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
-        h2 { text-align: center; font-size: 2.5em; margin-top: 60px; margin-bottom: 40px; color: #0056b3; }
-        
-        .advantages-section { padding: 60px 0; }
-        .advantages-grid { display: flex; justify-content: space-around; gap: 30px; flex-wrap: wrap; }
-        .advantage-item { flex-basis: 30%; min-width: 280px; text-align: center; }
-        .advantage-item .icon { font-size: 4em; color: #007bff; }
-        .advantage-item h3 { font-size: 1.5em; margin-top: 15px; }
-        
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .feature-card { background-color: #fff; border: 1px solid #e0e0e0; border-radius: 10px; padding: 30px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .feature-card .icon { font-size: 3em; margin-bottom: 15px; }
-        .feature-card h3 { font-size: 1.5em; color: #333; margin-bottom: 10px; }
-        
-        .trial-section { background-color: #f8f9fa; padding: 60px 20px; text-align: center; }
-        .regions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; max-width: 1100px; margin-left: auto; margin-right: auto; text-align: left;}
-        .region-card { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-        .region-card h3 { font-size: 1.3em; margin-top: 0; padding-bottom: 10px; border-bottom: 1px solid #eee; }
-        .region-card ul { list-style: none; padding: 0; margin: 10px 0 0 0; }
-        .region-card li { margin-bottom: 8px; font-size: 0.95em; }
-
-        /* 新定價區塊樣式 */
-        .pricing-container { display: flex; justify-content: center; align-items: stretch; gap: 30px; flex-wrap: wrap; }
-        .price-card { background: #fff; border: 1px solid #ddd; padding: 30px; border-radius: 12px; text-align: center; width: 100%; max-width: 420px; display: flex; flex-direction: column; }
-        .price-card h3 { font-size: 1.8em; margin-top: 0; }
-        .price-card .description { color: #555; min-height: 60px; }
-        .price-card ul { list-style: '✓'; text-align: left; padding-left: 20px; margin: 20px 0; flex-grow: 1; }
-        .price-card li { margin-bottom: 10px; }
-        .price-main { color: #0056b3; font-size: 2.2em; font-weight: bold; margin: 10px 0; }
-        .price-secondary { color: #555; }
-        .price-card.recommended { border: 2px solid #007bff; position: relative; transform: scale(1.05); }
-        .recommended-badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background-color: #007bff; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9em; font-weight: bold; }
-
-        footer { background-color: #333; color: white; padding: 30px 0; margin-top: 60px; text-align: center; }
-        footer p { margin: 10px 0; }
-        footer a { color: #00aaff; text-decoration: none; margin: 0 10px; }
-        footer a:hover { text-decoration: underline; }
-        @media (max-width: 960px) { .price-card.recommended { transform: scale(1); } }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } .advantages-grid { flex-direction: column; align-items: center; } }
-    </style>
+    <!-- Fonts & Theme -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/theme.css">
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <a href="./index.html" class="logo">
+    <!-- Top bar -->
+    <div class="top-bar">
+        <div class="top-bar__inner">
+            <div class="top-bar__left">
+                <span class="top-bar__item">📧 <a href="mailto:support@mywireguard.com">support@mywireguard.com</a></span>
+                <span class="top-bar__item">🛡️ 30-Day Money-Back Guarantee</span>
+            </div>
+            <div class="top-bar__right">
+                <span class="top-bar__item">🔒 Powered by WireGuard® Protocol</span>
+                <span class="top-bar__item">🌍 30+ Global Locations</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="site-header__inner">
+            <a href="./index.html" class="site-logo">
                 <img src="./logo.png" alt="MyWireGuard Logo">
             </a>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
                     <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
@@ -139,20 +94,36 @@
                     <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
                     <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
                 </ul>
-                <a href="./pricing.html" class="nav-trial-btn">Start Free Trial</a>
             </nav>
+            <div class="header-actions">
+                <a href="./pricing.html" class="nav-cta" data-i18n="nav-trial">Start Free Trial</a>
+                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+            </div>
         </div>
     </header>
 
     <main>
+        <!-- Hero -->
         <section class="hero">
-            <h1 data-i18n="hero-title">Break Free from Network Restrictions, Embrace Digital Freedom</h1>
-            <p data-i18n="hero-subtitle">Powered by cutting-edge WireGuard® protocol, offering both "Shared Nodes" and "Dedicated Lines" to meet all your needs from daily browsing to professional applications.</p>
-            <a href="#trial" class="button" data-i18n="hero-cta">Start Free Trial</a>
+            <div class="hero__inner">
+                <span class="hero__eyebrow" data-i18n="hero-eyebrow">WireGuard® VPN</span>
+                <h1 class="hero__title" data-i18n="hero-title">Break Free from Network Restrictions, Embrace Digital Freedom</h1>
+                <p data-i18n="hero-subtitle">Powered by cutting-edge WireGuard® protocol, offering both "Shared Nodes" and "Dedicated Lines" to meet all your needs from daily browsing to professional applications.</p>
+                <a href="./pricing.html" class="primary-btn" data-i18n="hero-cta">Start Free Trial</a>
+                <div class="hero__badges">
+                    <span>⚡ <span data-i18n="hero-badge-speed">Ultra-fast speeds</span></span>
+                    <span>🔒 <span data-i18n="hero-badge-nolog">Strict no-logs policy</span></span>
+                    <span>🌍 <span data-i18n="hero-badge-global">30+ locations</span></span>
+                </div>
+            </div>
         </section>
-        
+
+        <!-- Core advantages -->
         <section id="core-advantages" class="advantages-section">
             <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="advantages-title">Why WireGuard, Done Right</h2>
+                </div>
                 <div class="advantages-grid">
                     <div class="advantage-item"><div class="icon">🚀</div><h3 data-i18n="advantage-speed-title">Ultimate Speed</h3><p data-i18n="advantage-speed-desc">Lightweight WireGuard protocol ensures minimal performance loss and latency, delivering lightning-fast browsing, streaming, and downloading experience.</p></div>
                     <div class="advantage-item"><div class="icon">🛡️</div><h3 data-i18n="advantage-security-title">Military-Grade Security</h3><p data-i18n="advantage-security-desc">Advanced encryption technology and strict no-logs policy perfectly hide your digital footprint, ensuring absolute privacy and security.</p></div>
@@ -161,10 +132,13 @@
             </div>
         </section>
 
+        <!-- Free trial + regions -->
         <section id="trial" class="trial-section">
             <div class="container">
-                <h2 data-i18n="trial-title">Start Your One-Week Free Trial Now</h2>
-                <p data-i18n="trial-subtitle">Experience our premium server nodes worldwide with no commitment and 30-day money-back guarantee.</p>
+                <div class="section-title">
+                    <h2 data-i18n="trial-title">Start Your One-Week Free Trial Now</h2>
+                    <p data-i18n="trial-subtitle">Experience our premium server nodes worldwide with no commitment and 30-day money-back guarantee.</p>
+                </div>
                 <h4 data-i18n="trial-choose">Choose any of the following shared node locations to start your trial:</h4>
                 <div class="regions-grid">
                     <div class="region-card"><h3 data-i18n="region-americas">🌎 Americas</h3><ul><li>United States (N. Virginia)</li><li>United States (Ohio)</li><li>United States (N. California)</li><li>United States (Oregon)</li><li>Canada (Calgary)</li><li>Canada (Central)</li><li>Mexico (Central)</li><li>South America (São Paulo)</li></ul></div>
@@ -172,51 +146,84 @@
                     <div class="region-card"><h3 data-i18n="region-europe">🌍 Europe</h3><ul><li>United Kingdom (London)</li><li>Ireland</li><li>France (Paris)</li><li>Germany (Frankfurt)</li><li>Sweden (Stockholm)</li><li>Italy (Milan)</li><li>Spain</li><li>Switzerland (Zurich)</li></ul></div>
                     <div class="region-card"><h3 data-i18n="region-middle-africa">🌍 Middle East & Africa</h3><ul><li>Israel (Tel Aviv)</li><li>UAE</li><li>Bahrain</li><li>Africa (Cape Town)</li></ul></div>
                 </div>
-                <a href="#why-us" class="button" style="margin-top: 30px;" data-i18n="trial-cta">View Plan Details</a>
+                <a href="#why-us" class="primary-btn" style="margin-top: 40px;" data-i18n="trial-cta">View Plan Details</a>
             </div>
         </section>
 
-        <div class="container">
-            <h2 id="why-us" data-i18n="why-title">Why Choose MyWireGuard?</h2>
-            <div class="features-grid">
-                <div class="feature-card"><div class="icon">🚀</div><h3 data-i18n="feature-speed-title">Ultra-Fast, One-Click Connection</h3><p data-i18n="feature-speed-desc">Advanced WireGuard protocol for smooth live streaming, large file downloads, and online gaming. Simple operation with one-click connection.</p></div>
-                <div class="feature-card"><div class="icon">🛡️</div><h3 data-i18n="feature-encryption-title">Powerful Encryption Technology</h3><p data-i18n="feature-encryption-desc">Industry-leading AES 256-bit encryption to hide your location and obfuscate network traffic, keeping your online activities private.</p></div>
-                <div class="feature-card"><div class="icon">📜</div><h3 data-i18n="feature-nolog-title">Strict No-Logs Policy</h3><p data-i18n="feature-nolog-desc">We never record, share, or sell your data. Headquartered in Romania, where privacy laws provide strong protection.</p></div>
-                <div class="feature-card"><div class="icon">🔑</div><h3 data-i18n="feature-dedicated-title">Dedicated Line Option</h3><p data-i18n="feature-dedicated-desc">Need fixed IP and ultimate performance? Our dedicated line plans offer exclusive tunnels and IP addresses for remote work and professional applications.</p></div>
-                <div class="feature-card"><div class="icon" style="font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;">🇭🇰🇹🇼</div><h3 data-i18n="feature-hktw-title">Optimized for Hong Kong & Taiwan</h3><p data-i18n="feature-hktw-desc">Understanding the unique network environment of Hong Kong and Taiwan users, we invest heavily in node selection and network optimization for the best localized experience.</p></div>
-                <div class="feature-card"><div class="icon">💬</div><h3 data-i18n="feature-support-title">24/7 Customer Support</h3><p data-i18n="feature-support-desc">Contact us anytime via live chat or email. We respond quickly and support multiple languages to solve your problems.</p></div>
+        <!-- Why choose us -->
+        <section id="why-us" class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="why-title">Why Choose MyWireGuard?</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card"><div class="icon">🚀</div><h3 data-i18n="feature-speed-title">Ultra-Fast, One-Click Connection</h3><p data-i18n="feature-speed-desc">Advanced WireGuard protocol for smooth live streaming, large file downloads, and online gaming. Simple operation with one-click connection.</p></div>
+                    <div class="feature-card"><div class="icon">🛡️</div><h3 data-i18n="feature-encryption-title">Powerful Encryption Technology</h3><p data-i18n="feature-encryption-desc">Industry-leading AES 256-bit encryption to hide your location and obfuscate network traffic, keeping your online activities private.</p></div>
+                    <div class="feature-card"><div class="icon">📜</div><h3 data-i18n="feature-nolog-title">Strict No-Logs Policy</h3><p data-i18n="feature-nolog-desc">We never record, share, or sell your data. Headquartered in Romania, where privacy laws provide strong protection.</p></div>
+                    <div class="feature-card"><div class="icon">🔑</div><h3 data-i18n="feature-dedicated-title">Dedicated Line Option</h3><p data-i18n="feature-dedicated-desc">Need fixed IP and ultimate performance? Our dedicated line plans offer exclusive tunnels and IP addresses for remote work and professional applications.</p></div>
+                    <div class="feature-card"><div class="icon" style="font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;">🇭🇰🇹🇼</div><h3 data-i18n="feature-hktw-title">Optimized for Hong Kong & Taiwan</h3><p data-i18n="feature-hktw-desc">Understanding the unique network environment of Hong Kong and Taiwan users, we invest heavily in node selection and network optimization for the best localized experience.</p></div>
+                    <div class="feature-card"><div class="icon">💬</div><h3 data-i18n="feature-support-title">24/7 Customer Support</h3><p data-i18n="feature-support-desc">Contact us anytime via live chat or email. We respond quickly and support multiple languages to solve your problems.</p></div>
+                </div>
             </div>
+        </section>
 
-            <section id="pricing">
-                <h2 data-i18n="pricing-title">Choose the Plan That Suits You Best</h2>
-                <div style="text-align: center; padding: 40px 20px; background: #f8f9fa; border-radius: 16px; max-width: 700px; margin: 0 auto;">
-                    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 30px;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 2.5em;">🌐</div>
-                            <div style="font-weight: bold; font-size: 1.1em; margin: 8px 0 4px;">Shared Nodes</div>
-                            <div style="color: #0056b3; font-size: 1.4em; font-weight: bold;">from $2.99<small style="font-size:0.55em;">/mo</small></div>
+        <!-- Pricing summary -->
+        <section id="pricing" class="home-pricing">
+            <div class="container">
+                <div class="section-title">
+                    <h2 data-i18n="pricing-title">Choose the Plan That Suits You Best</h2>
+                </div>
+                <div class="home-pricing__box">
+                    <div class="home-pricing__row">
+                        <div class="home-pricing__item">
+                            <div class="plan-icon">🌐</div>
+                            <div class="plan-name" data-i18n="plan-shared-name">Shared Nodes</div>
+                            <div class="plan-price">from $2.99<small>/mo</small></div>
                         </div>
-                        <div style="text-align: center;">
-                            <div style="font-size: 2.5em;">⚡</div>
-                            <div style="font-weight: bold; font-size: 1.1em; margin: 8px 0 4px;">Dedicated Line</div>
-                            <div style="color: #0056b3; font-size: 1.4em; font-weight: bold;">from $9.99<small style="font-size:0.55em;">/mo</small></div>
+                        <div class="home-pricing__item">
+                            <div class="plan-icon">⚡</div>
+                            <div class="plan-name" data-i18n="plan-dedicated-name">Dedicated Line</div>
+                            <div class="plan-price">from $9.99<small>/mo</small></div>
                         </div>
                     </div>
-                    <p style="color: #555; margin: 0 0 24px;">7-day free trial on every plan. 30-day money-back guarantee. No commitment.</p>
-                    <a href="./pricing.html" class="button" style="font-size: 1.1em; padding: 16px 40px;">View Plans &amp; Start Free Trial</a>
+                    <p style="color:#555; margin:0 0 24px;" data-i18n="pricing-note">7-day free trial on every plan. 30-day money-back guarantee. No commitment.</p>
+                    <a href="./pricing.html" class="primary-btn" data-i18n="pricing-cta">View Plans &amp; Start Free Trial</a>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
         <div class="container">
-            <p data-i18n="footer-copyright">Copyright © 2026 MyWireGuard.com. All Rights Reserved.</p>
-            <p>
-                <a href="./contact.html" data-i18n="footer-contact">Contact</a> |
-                <a href="./refund.html" data-i18n="footer-refund">Refund Policy</a> |
-                <a href="./terms.html" data-i18n="footer-terms">Terms of Service</a>
-            </p>
+            <div class="site-footer__grid">
+                <div class="site-footer__about">
+                    <img src="./logo.png" alt="MyWireGuard Logo">
+                    <p data-i18n="footer-about">Fast, secure WireGuard® VPN with shared nodes and dedicated lines. Global servers across 30+ locations, backed by a strict no-logs policy.</p>
+                    <div class="contact-line">📧 <a href="mailto:support@mywireguard.com">support@mywireguard.com</a></div>
+                </div>
+                <div class="site-footer__links">
+                    <h6 data-i18n="footer-quicklinks">Quick Links</h6>
+                    <ul>
+                        <li><a href="./index.html" data-i18n="nav-home">Home</a></li>
+                        <li><a href="./pricing.html" data-i18n="nav-pricing">Pricing</a></li>
+                        <li><a href="./downloads.html" data-i18n="nav-downloads">Downloads</a></li>
+                        <li><a href="./tutorials.html" data-i18n="nav-tutorials">Tutorials</a></li>
+                        <li><a href="./support.html" data-i18n="nav-support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer__links">
+                    <h6 data-i18n="footer-company">Company</h6>
+                    <ul>
+                        <li><a href="./contact.html" data-i18n="footer-contact">Contact</a></li>
+                        <li><a href="./refund.html" data-i18n="footer-refund">Refund Policy</a></li>
+                        <li><a href="./terms.html" data-i18n="footer-terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="site-footer__copyright">
+                <p data-i18n="footer-copyright">Copyright © 2026 MyWireGuard.com. All Rights Reserved.</p>
+                <span class="trademark">"WireGuard" is a registered trademark of Jason A. Donenfeld. MyWireGuard is an independent service and is not affiliated with the WireGuard project.</span>
+            </div>
         </div>
     </footer>
 
@@ -237,5 +244,6 @@
       })(document,"script");
     </script>
 
+    <script src="./assets/theme.js"></script>
 </body>
 </html>
